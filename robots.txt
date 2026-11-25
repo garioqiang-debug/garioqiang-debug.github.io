@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://scicom.pages.dev/sitemap.xml
+Sitemap: https://garioqiang-debug.github.io/sitemap.xml
