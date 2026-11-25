@@ -1,0 +1,1780 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>葛应强 · 科普写作</title>
+<meta name="description" content="葛应强（小强老师）科普写作档案：34 篇已刊作品、4 本图书工作、8 个主题。昆虫学硕士，中国科普作家协会会员。">
+<meta name="theme-color" content="#0a0e0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233d6b41'/%3E%3Crect x='8' y='6' width='16' height='20' rx='2.5' fill='none' stroke='%23c8ee6f' stroke-width='2'/%3E%3Cpath d='M12 13h8M12 17h8M12 21h5' stroke='%23c8ee6f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://scicom.pages.dev/作品集/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="葛应强 · 科普写作">
+<meta property="og:description" content="34 篇已刊科普作品，写给那些被误解的物种。">
+<meta property="og:url" content="https://scicom.pages.dev/作品集/">
+<meta property="og:image" content="https://scicom.pages.dev/作品集/assets/img/og-cover.jpg">
+
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap">
+
+<style>
+/* =============================================================
+   0. 设计变量 · 暗 / 亮双主题
+   现代版语言：深底 + 单一酸性强调色 + 圆角面板 + 颗粒质感
+   ============================================================= */
+:root{
+  --bg:#0a0e0b;
+  --bg-soft:#0f1511;
+  --panel:#121914;
+  --panel-2:#161e18;
+  --line:rgba(233,232,221,.10);
+  --line-2:rgba(233,232,221,.06);
+  --txt:#e9e8dd;
+  --muted:#94a094;
+  --dim:#6b776c;
+  --accent:#c8ee6f;      /* 苔绿偏酸：整套视觉的唯一高光 */
+  --accent-soft:rgba(200,238,111,.14);
+  --amber:#e6a05a;
+  --radius:22px;
+  --radius-lg:30px;
+  --shadow:0 30px 60px -30px rgba(0,0,0,.75);
+  --serif:"Noto Serif SC","Songti SC","SimSun",Georgia,serif;
+  --sans:"Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,monospace;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+/* 亮色主题：只换颜色变量，布局与交互完全一致 */
+[data-theme="light"]{
+  --bg:#f3f1e8;
+  --bg-soft:#eae7db;
+  --panel:#ffffff;
+  --panel-2:#fbfaf4;
+  --line:rgba(18,26,20,.12);
+  --line-2:rgba(18,26,20,.07);
+  --txt:#121a14;
+  --muted:#55605a;
+  --dim:#74807a;
+  --accent:#3d6b41;
+  --accent-soft:rgba(61,107,65,.12);
+  --amber:#b26a2c;
+  --shadow:0 24px 50px -30px rgba(18,26,20,.35);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  section{ scroll-margin-top:86px; } /* 锚点跳转给固定顶栏留高 */
+body{
+  margin:0; background:var(--bg); color:var(--txt);
+  font-family:var(--sans); font-size:16px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  transition:background .45s ease, color .45s ease;
+}
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+::selection{ background:var(--accent); color:var(--bg); }
+
+/* 颗粒质感：固定在最上层，不参与交互 */
+.grain{
+  position:fixed; inset:0; z-index:90; pointer-events:none;
+  background-image:var(--grain); background-size:140px 140px;
+  opacity:.045; mix-blend-mode:overlay;
+}
+
+/* 首屏背后的两团柔光，避免纯黑死板 */
+.aurora{
+  position:absolute; inset:-10% 0 auto 0; height:70vh; z-index:0;
+  pointer-events:none; overflow:hidden;
+}
+.aurora i{
+  position:absolute; display:block; border-radius:50%;
+  filter:blur(90px); opacity:.5;
+}
+.aurora i:nth-child(1){ width:520px; height:520px; left:-8%; top:-10%; background:rgba(120,190,90,.30); }
+.aurora i:nth-child(2){ width:420px; height:420px; right:4%; top:-18%; background:rgba(206,150,80,.22); }
+
+/* =============================================================
+   1. 通用排版零件
+   ============================================================= */
+.wrap{ max-width:1240px; margin:0 auto; padding:0 clamp(18px,4vw,56px); }
+
+.eyebrow{
+  font-family:var(--mono); font-size:11px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--muted);
+  display:inline-flex; align-items:center; gap:10px;
+}
+.eyebrow::before{
+  content:""; width:22px; height:1px; background:var(--accent);
+}
+
+.sec-head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:24px; margin-bottom:clamp(26px,3.6vw,44px);
+}
+.sec-head h2{
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(24px,3vw,38px); line-height:1.2; margin:8px 0 0;
+  letter-spacing:.01em;
+}
+.sec-head p{ color:var(--muted); font-size:13.5px; max-width:34em; margin:8px 0 0; }
+
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:13px 22px; border-radius:999px;
+  font-size:13.5px; letter-spacing:.02em;
+  white-space:nowrap; flex:none;
+  border:1px solid var(--line);
+  transition:transform .3s cubic-bezier(.2,.7,.3,1), background .3s, border-color .3s, gap .3s;
+}
+.btn svg{ width:15px; height:15px; }
+.btn-primary{
+  background:var(--accent); color:#0a0e0b; border-color:var(--accent);
+  font-weight:600;
+}
+.btn-primary:hover{ gap:16px; transform:translateY(-2px); }
+.btn-ghost{ color:var(--txt); background:transparent; }
+.btn-ghost:hover{ background:var(--panel); border-color:var(--line); gap:16px; }
+
+/* =============================================================
+   2. 顶栏 + 阅读进度
+   ============================================================= */
+.topbar{
+  position:sticky; top:0; z-index:60;
+  backdrop-filter:blur(14px) saturate(1.2);
+  background:color-mix(in srgb, var(--bg) 78%, transparent);
+  border-bottom:1px solid var(--line-2);
+}
+.topbar-in{
+  max-width:1240px; margin:0 auto; padding:14px clamp(18px,4vw,56px);
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand-dot{
+  width:9px; height:9px; border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 4px var(--accent-soft);
+}
+.brand b{ font-family:var(--serif); font-weight:600; font-size:18px; letter-spacing:.04em; }
+.brand span{ font-family:var(--mono); font-size:10px; letter-spacing:.18em; color:var(--dim); text-transform:uppercase; }
+
+.nav{ display:flex; align-items:center; gap:6px; margin-left:auto; }
+.nav a{
+  font-size:13px; color:var(--muted); padding:8px 12px; border-radius:999px;
+  transition:color .25s, background .25s;
+}
+.nav a:hover{ color:var(--txt); background:var(--panel); }
+
+.theme-btn{
+  width:40px; height:40px; border-radius:50%;
+  border:1px solid var(--line); display:grid; place-items:center;
+  color:var(--muted); transition:color .3s, border-color .3s, transform .3s;
+}
+.theme-btn:hover{ color:var(--txt); border-color:var(--txt); transform:rotate(18deg); }
+.theme-btn svg{ width:17px; height:17px; }
+
+.progress{
+  position:fixed; top:0; left:0; height:2px; width:0;
+  background:var(--accent); z-index:70;
+  box-shadow:0 0 16px var(--accent);
+}
+
+/* =============================================================
+   3. 首屏 · 原版编辑部式（左：标题 + 导语 / 右：资质栏）
+   ============================================================= */
+.hero{ position:relative; overflow:hidden; padding:clamp(46px,6vw,90px) 0 clamp(30px,4vw,54px); border-bottom:1px solid var(--line-2); }
+/* 方格纸底纹：原版首屏的手绘感，只在中间可见，四角淡出 */
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--line) 62%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--line) 62%, transparent) 1px, transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 52%, transparent 96%);
+  mask-image:linear-gradient(180deg, #000 0%, #000 52%, transparent 96%);
+}
+.hero-grid{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:minmax(0,1fr) 358px;
+  gap:clamp(26px,4vw,62px); align-items:start;
+}
+.hero-left{ min-width:0; }
+
+.hero-eyebrow{
+  display:flex; align-items:center; gap:18px; margin:0 0 clamp(22px,2.6vw,34px);
+  font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent);
+}
+.hero-eyebrow::after{ content:""; height:1px; flex:1; background:var(--line); }
+
+.hero h1{
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(30px,4.4vw,62px); line-height:1.24; letter-spacing:-.015em;
+  margin:0 0 clamp(20px,2.4vw,30px);
+}
+.hero h1 .h1-gap{ display:inline-block; width:.34em; }
+/* 第二行整句不断行：断点只允许落在两个短句之间的空隙上 */
+.hero h1 .hl-nw{ white-space:nowrap; }
+
+.hero-lede{
+  font-size:15.5px; line-height:1.9; color:var(--muted);
+  max-width:min(34em,100%); margin:0 0 clamp(24px,3vw,36px);
+}
+.hero-cta{ display:flex; align-items:center; gap:10px; flex-wrap:nowrap; }
+/* 首屏数据：跟三个按钮同一行，一条竖虚线隔开 */
+.hero-cta .hero-facts{
+  display:flex; flex-wrap:nowrap; align-items:baseline; gap:6px 16px;
+  margin:0 0 0 6px; padding:0 0 0 16px;
+  border-top:0; border-left:1px dashed var(--line);
+  font-family:var(--mono); font-size:10px; letter-spacing:.04em; color:var(--dim);
+  white-space:nowrap;
+ }
+.hero-cta .hero-facts b{ font-size:13px; font-weight:600; letter-spacing:0; color:var(--txt); font-variant-numeric:tabular-nums; margin-right:3px; }
+.hero-facts > span{ white-space:nowrap; }
+
+/* 首屏数据脚注：一条细线 + 四个数字，替代原来的数据格 */
+.hero-facts{
+  display:flex; flex-wrap:wrap; gap:8px 26px; align-items:baseline;
+  margin-top:clamp(26px,3.4vw,44px); padding-top:16px;
+  border-top:1px dashed var(--line);
+  font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--dim);
+}
+.hero-facts b{
+  font-size:15px; font-weight:600; letter-spacing:0; color:var(--txt);
+  font-variant-numeric:tabular-nums; margin-right:5px;
+}
+
+.hero-right{ border-left:1px solid var(--line); padding-left:clamp(20px,2.6vw,34px); }
+.hr-label{
+  font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--dim); margin:0 0 16px;
+}
+.honor-stack{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 clamp(14px,1.6vw,22px); }
+.honor-stack li{ padding:14px 0; border-bottom:1px dashed var(--line); }
+.honor-stack .hk{
+  display:inline-block; margin-bottom:8px; padding:3px 8px; border-radius:3px;
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.08em;
+  background:var(--accent); color:#0a0e0b;
+}
+.honor-stack .ht{ display:block; font-family:var(--serif); font-size:15px; font-weight:600; line-height:1.45; text-wrap:balance; }
+.honor-stack .hd{ display:block; margin-top:3px; font-size:11px; line-height:1.7; color:var(--muted); text-wrap:balance; }
+[data-theme="light"] .honor-stack .hk{ color:#f6f4ea; }
+
+/* 3b. 我在写什么，以及为谁写（沿用旧版 01 区原文） */
+.about-me{ padding:clamp(38px,5vw,66px) 0 clamp(34px,4.4vw,58px); }
+.about-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,4vw,60px); align-items:stretch; }
+.about-grid > div{ display:flex; flex-direction:column; }
+/* 左栏两条主线各占一半高度，撑满右列"我的科普观"的等高，中间一条虚线 */
+.about-grid > div:first-child{ gap:0; }
+.about-grid .am-b{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:14px 0; }
+.about-grid .am-b + .am-b{ border-top:1px dashed var(--line); margin-top:6px; }
+.about-grid .am-b p{ margin:0; }
+.about-grid h3{ font-family:var(--serif); font-weight:600; font-size:20px; margin:0 0 14px; }
+.about-grid p{ font-size:14.5px; line-height:1.95; color:var(--muted); margin:0 0 16px; }
+.about-grid p b{ color:var(--txt); font-weight:600; }
+.about-grid > div:last-child p:last-child{ margin-bottom:0; }
+
+@media (max-width:1000px){
+  .hero-grid{ grid-template-columns:minmax(0,1fr); gap:clamp(24px,3.4vw,38px); }
+  .hero-right{ border-left:0; border-top:1px solid var(--line); padding-left:0; padding-top:22px; }
+}
+@media (max-width:920px){
+  .contact-in p{ white-space:normal; }
+}
+@media (max-width:1180px){
+  .hero-cta{ flex-wrap:wrap; }
+  .hero-cta .hero-facts{ margin-left:0; padding-left:0; border-left:0; border-top:1px dashed var(--line); padding-top:12px; width:100%; flex-wrap:wrap; }
+}
+@media (max-width:680px){
+  .hero h1{ font-size:clamp(26px,7.4vw,36px); line-height:1.3; }
+  .contact-in p{ white-space:normal; }
+  .hero-cta .btn{ padding:11px 17px; font-size:13px; }
+  .hero h1 .h1-gap{ display:block; width:0; height:0; }
+  .hero-lede{ font-size:14.5px; }
+  .honor-stack{ grid-template-columns:1fr; }
+  .about-grid{ grid-template-columns:1fr; gap:26px; }
+}
+
+/* =============================================================
+   4. 平台跑马灯
+   ============================================================= */
+.ticker{
+  border-block:1px solid var(--line-2);
+  overflow:hidden; padding:14px 0; margin-top:clamp(20px,3vw,34px);
+  mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.ticker-track{
+  display:flex; gap:44px; width:max-content;
+  animation:marquee 32s linear infinite;
+}
+.ticker:hover .ticker-track{ animation-play-state:paused; }
+@keyframes marquee{ to{ transform:translateX(-50%) } }
+.ticker-item{
+  display:flex; align-items:center; gap:12px;
+  font-family:var(--mono); font-size:12px; letter-spacing:.18em;
+  color:var(--muted); text-transform:uppercase; white-space:nowrap;
+}
+.ticker-item i{ width:4px; height:4px; background:var(--accent); border-radius:50%; }
+
+/* =============================================================
+   5. 精选六篇（3 × 2 网格，不再横滑）
+   ============================================================= */
+.featured{ padding:clamp(44px,6vw,78px) 0 clamp(20px,3vw,36px); }
+.f-grid{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(12px,1.4vw,20px);
+}
+.f-card{
+  display:block; border-radius:var(--radius); overflow:hidden; position:relative;
+  background:var(--panel); border:1px solid var(--line);
+  transition:transform .45s cubic-bezier(.2,.7,.3,1), border-color .4s;
+}
+.f-card:hover{ transform:translateY(-6px); border-color:rgba(200,238,111,.35); }
+.f-card .pic{ position:relative; aspect-ratio:4/3; overflow:hidden; }
+.f-card .pic img{ width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.7,.3,1); }
+.f-card:hover .pic img{ transform:scale(1.06); }
+.f-card .pic::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(10,14,11,.72), transparent 55%);
+}
+[data-theme="light"] .f-card .pic::after{
+  background:linear-gradient(to top, rgba(255,255,255,.8), transparent 55%);
+}
+.f-badge{
+  position:absolute; left:12px; top:12px; z-index:2;
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.1em;
+  padding:6px 10px; border-radius:999px;
+  background:rgba(10,14,11,.6); color:#e9e8dd;
+  border:1px solid rgba(233,232,221,.22);
+  backdrop-filter:blur(6px);
+  max-width:calc(100% - 24px); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.f-body{ padding:16px 16px 18px; }
+.f-body h3{
+  font-family:var(--serif); font-weight:600; font-size:16px; line-height:1.5;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+  min-height:calc(1.5em * 2);
+}
+.f-body .meta{
+  font-family:var(--mono); font-size:10px; letter-spacing:.1em;
+  color:var(--dim); margin-top:8px;
+}
+.f-hint{ font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); white-space:nowrap; }
+.f-open{
+  margin-left:auto; font-family:var(--mono); font-size:9.5px; letter-spacing:.1em;
+  color:var(--accent); opacity:0; transition:opacity .35s;
+}
+.f-card:hover .f-hint{ font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); white-space:nowrap; }
+.f-open{ opacity:1; }
+.f-body .meta{ display:flex; align-items:center; gap:10px; }
+@media (max-width:1000px){ .f-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:620px){ .f-grid{ grid-template-columns:1fr; } }
+
+/* =============================================================
+   6. 作品区：吸顶筛选 + 卡片网格
+   ============================================================= */
+.works{ padding:clamp(30px,4vw,54px) 0 clamp(50px,7vw,90px); }
+
+.filters{
+  position:sticky; top:69px; z-index:50;
+  padding:12px 0; margin-bottom:8px;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(12px);
+}
+.chips{ display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+.chips::-webkit-scrollbar{ display:none; }
+.chip{
+  position:relative; flex:none;
+  padding:8px 15px; border-radius:999px;
+  border:1px solid var(--line); color:var(--muted);
+  font-size:12.5px; letter-spacing:.02em; white-space:nowrap;
+  transition:color .25s, border-color .25s, background .25s;
+}
+.chip .n{
+  font-family:var(--mono); font-size:9.5px; color:var(--dim); margin-left:6px;
+}
+.chip:hover{ color:var(--txt); border-color:var(--dim); }
+.chip.is-on{ background:var(--accent); border-color:var(--accent); color:#0a0e0b; font-weight:600; }
+.chip.is-on .n{ color:rgba(10,14,11,.55); }
+
+/* ---------- 分页（沿用旧版：8 篇/页，窄屏 4 篇/页） ---------- */
+.pagerbar{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; flex-wrap:wrap; margin:4px 0 clamp(16px,2vw,24px);
+}
+.pg-info{
+  font-family:var(--mono); font-size:10px; letter-spacing:.14em;
+  color:var(--dim); text-transform:uppercase;
+}
+.pager{ display:flex; align-items:center; gap:6px; }
+.pg-btn{
+  width:34px; height:34px; border-radius:50%; flex:none;
+  border:1px solid var(--line); background:transparent; color:var(--muted);
+  font-size:15px; line-height:1; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center;
+  transition:border-color .2s, color .2s, background .2s;
+}
+.pg-btn:hover:not(:disabled){ border-color:var(--accent); color:var(--accent); }
+.pg-btn:disabled{ opacity:.28; cursor:default; }
+.pg-nums{ display:flex; align-items:center; gap:6px; }
+.pg-num{
+  min-width:32px; height:32px; padding:0 8px; border-radius:8px;
+  border:1px solid var(--line); background:transparent; color:var(--muted);
+  font-family:var(--mono); font-size:12px; font-variant-numeric:tabular-nums;
+  cursor:pointer; transition:border-color .2s, color .2s, background .2s;
+}
+.pg-num:hover{ border-color:var(--accent); color:var(--txt); }
+.pg-num.on{ background:var(--accent); border-color:var(--accent); color:#0a0e0b; font-weight:600; }
+@media (max-width:640px){
+  .pagerbar{ margin-top:0; }
+  .pg-btn{ width:30px; height:30px; }
+  .pg-num{ min-width:28px; height:28px; font-size:11px; }
+}
+
+.grid{
+  display:grid; gap:clamp(10px,1.3vw,18px);
+  /* 每页固定 3 × 2：三列两行 */
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.card{
+  position:relative; display:flex; flex-direction:column;
+  border-radius:var(--radius); overflow:hidden;
+  background:var(--panel); border:1px solid var(--line);
+  cursor:pointer;
+  transform:translateY(14px); opacity:0;
+  transition:transform .5s cubic-bezier(.2,.7,.3,1), opacity .5s, border-color .4s;
+}
+.card.is-in{ transform:none; opacity:1; }
+.card:hover{ border-color:rgba(200,238,111,.3); }
+.card .pic{ aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--bg-soft); flex:none; }
+.card .pic img{ width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.7,.3,1), filter .5s; filter:saturate(.92); }
+.card:hover .pic img{ transform:scale(1.05); filter:saturate(1.05); }
+.card .theme{
+  position:absolute; left:12px; top:12px; z-index:2;
+  font-family:var(--mono); font-size:9px; letter-spacing:.14em;
+  padding:5px 9px; border-radius:999px;
+  background:rgba(10,14,11,.55); color:#dfe6da;
+  border:1px solid rgba(233,232,221,.18); backdrop-filter:blur(6px);
+}
+.card .body{ padding:16px 18px 18px; display:flex; flex-direction:column; flex:1; }
+.card h3{
+  font-family:var(--serif); font-weight:600; font-size:17px; line-height:1.5;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+  /* 固定两行高度，同排卡片的摘要与分隔线才能对齐 */
+  min-height:calc(1.5em * 2);
+  transition:color .3s;
+}
+.card:hover h3{ color:var(--accent); }
+.card .sum{
+  margin-top:9px; font-size:12.5px; line-height:1.85; color:var(--muted);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.card .foot{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-top:auto; padding-top:12px; border-top:1px solid var(--line-2);
+  font-family:var(--mono); font-size:10px; letter-spacing:.1em; color:var(--dim);
+}
+.card .arrow{
+  width:26px; height:26px; border-radius:50%;
+  display:grid; place-items:center; border:1px solid var(--line);
+  transition:background .3s, color .3s, transform .3s;
+}
+.card:hover .arrow{ background:var(--accent); color:#0a0e0b; border-color:var(--accent); transform:rotate(-45deg); }
+/* 三个标签压在封面右上角，融进图片（原先是正文下半部分组成卡片高度） */
+.card .pic-tags{
+  position:absolute; right:10px; top:10px; z-index:2;
+  display:flex; gap:5px; flex-wrap:wrap; justify-content:flex-end; max-width:66%;
+}
+.card .pic-tags span{
+  flex:none; padding:4px 8px; border-radius:999px;
+  background:rgba(10,14,11,.62); color:#e7ecdf;
+  border:1px solid rgba(233,232,221,.22);
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  font-family:var(--mono); font-size:9px; letter-spacing:.04em; white-space:nowrap;
+}
+/* 图片来源署名：仅在使用外部授权图（如 CC BY-SA）时出现，压左下角 */
+.card .pic-credit{
+  position:absolute; left:10px; bottom:9px; z-index:2; max-width:86%;
+  font-family:var(--mono); font-size:8.5px; letter-spacing:.02em; line-height:1.4; white-space:nowrap;
+  color:rgba(233,232,221,.86); background:rgba(10,14,11,.55);
+  padding:3px 7px; border-radius:6px;
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+}
+/* 卡片整体就是一个外链，鼠标与键盘都直接跳到原文 */
+.card, .f-card{ color:inherit; }
+.card:focus-visible, .f-card:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+/* =============================================================
+   7. 图书：可倾斜的卡片
+   ============================================================= */
+.books{ padding:clamp(40px,6vw,76px) 0; border-top:1px solid var(--line-2); }
+.book-grid{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(12px,1.5vw,20px); }
+.book{
+  border-radius:var(--radius); border:1px solid var(--line);
+  background:var(--panel); padding:16px;
+  transform-style:preserve-3d; will-change:transform;
+  transition:transform .3s ease-out, box-shadow .4s;
+  cursor:pointer;
+}
+.book:hover{ box-shadow:var(--shadow); }
+.book .pic{ aspect-ratio:4/3; border-radius:14px; overflow:hidden; background:var(--bg-soft); display:grid; place-items:center; padding:8px; }
+.book .pic img{ width:100%; height:100%; object-fit:contain; }
+.book .kind{
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; color:var(--accent);
+  margin:14px 0 8px; text-transform:uppercase;
+}
+.book h3{ font-family:var(--serif); font-weight:600; font-size:16px; line-height:1.55; margin:0; }
+.book .sub{ color:var(--dim); font-size:11.5px; margin-top:6px; }
+
+/* =============================================================
+   8. 资质 / 服务 / 联系
+   ============================================================= */
+
+.services{ padding:clamp(30px,4vw,56px) 0 clamp(46px,6vw,80px); }
+.svc-list{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(10px,1.4vw,18px); }
+.svc{
+  display:block; border:1px solid var(--line); border-radius:20px; padding:22px;
+  background:transparent; transition:background .35s, border-color .35s, transform .35s;
+}
+.svc:hover{ background:var(--panel); border-color:rgba(200,238,111,.3); transform:translateY(-4px); }
+.svc .no{ font-family:var(--mono); font-size:11px; color:var(--dim); letter-spacing:.1em; }
+.svc h4{ font-family:var(--serif); font-weight:600; font-size:17px; margin:12px 0 0; }
+.svc p{ color:var(--muted); font-size:12.5px; line-height:1.85; margin:8px 0 0; }
+
+.contact{ padding:0 0 clamp(40px,5vw,70px); }
+.contact-in{
+  border:1px solid var(--line); border-radius:var(--radius-lg);
+  padding:clamp(24px,3.4vw,48px);
+  display:grid; grid-template-columns:minmax(0,1fr) auto; gap:clamp(18px,3vw,44px);
+  align-items:center;
+  background:
+    radial-gradient(90% 120% at 0% 0%, var(--accent-soft), transparent 55%),
+    var(--panel);
+}
+.contact-in h2{
+  font-family:var(--serif); font-weight:600; font-size:clamp(24px,3.2vw,42px);
+  line-height:1.25; margin:0; letter-spacing:.01em;
+  white-space:nowrap; /* 「先聊选题，再谈别的。」保持一行 */
+}
+.contact-in p{ color:var(--muted); font-size:14px; margin:14px 0 0; max-width:none; white-space:nowrap; }
+.qr-box{
+  width:180px; padding:14px; border-radius:18px; background:#fff;
+  text-align:center; box-shadow:var(--shadow);
+}
+.qr-box img{ width:100%; border-radius:10px; }
+.qr-box span{ display:block; margin-top:8px; font-family:var(--mono); font-size:9.5px; letter-spacing:.12em; color:#2a2f28; }
+
+.foot{ margin-top:clamp(46px,6vw,80px); border-top:1px solid var(--line-2); padding:clamp(26px,3.6vw,40px) 0 clamp(30px,4vw,44px); }
+.foot-in{ display:flex; flex-wrap:wrap; gap:20px 34px; align-items:flex-start; justify-content:space-between; }
+.foot-brand b{ font-family:var(--serif); font-size:16px; font-weight:600; display:flex; align-items:center; gap:9px; }
+.foot-brand p{ font-size:11.5px; color:var(--dim); margin:8px 0 0; }
+.foot-links{ display:flex; flex-wrap:wrap; gap:8px 22px; font-size:12px; color:var(--muted); }
+.foot-links a:hover{ color:var(--txt); }
+.foot-base{ display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between; margin-top:22px; font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; color:var(--dim); text-transform:uppercase; }
+
+/* =============================================================
+   9. 详情弹层
+   ============================================================= */
+.modal{
+  position:fixed; inset:0; z-index:80; display:grid; place-items:center;
+  padding:clamp(12px,3vw,40px);
+  background:rgba(6,9,7,.62); backdrop-filter:blur(10px);
+  opacity:0; pointer-events:none; transition:opacity .35s;
+}
+.modal.is-open{ opacity:1; pointer-events:auto; }
+.modal-panel{
+  position:relative; display:flex; flex-direction:column;
+  width:min(880px,100%); max-height:88vh; overflow:hidden;
+  background:var(--panel); border:1px solid var(--line);
+  border-radius:var(--radius-lg); box-shadow:var(--shadow);
+  transform:translateY(24px) scale(.98); transition:transform .4s cubic-bezier(.2,.7,.3,1);
+}
+.modal.is-open .modal-panel{ transform:none; }
+.modal-hero{ position:relative; flex:none; aspect-ratio:21/9; overflow:hidden; background:var(--bg-soft); }
+.modal-hero img{ width:100%; height:100%; object-fit:cover; }
+.modal-hero::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(10,14,11,.65), transparent 55%);
+}
+.modal-close{
+  position:absolute; right:14px; top:14px; z-index:2;
+  width:38px; height:38px; border-radius:50%;
+  background:rgba(10,14,11,.6); border:1px solid rgba(233,232,221,.25);
+  color:#e9e8dd; display:grid; place-items:center; backdrop-filter:blur(6px);
+  transition:background .25s, transform .25s;
+}
+.modal-close:hover{ background:var(--accent); color:#0a0e0b; transform:rotate(90deg); }
+.modal-body{ padding:clamp(20px,3vw,34px); overflow:auto; }
+.modal-no{ font-family:var(--mono); font-size:10px; letter-spacing:.18em; color:var(--dim); }
+.modal-body h2{
+  font-family:var(--serif); font-weight:600; font-size:clamp(20px,2.6vw,30px);
+  line-height:1.45; margin:10px 0 0;
+}
+.modal-plat{ font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--accent); margin-top:12px; }
+.modal-facts{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1px; background:var(--line); border:1px solid var(--line);
+  border-radius:14px; overflow:hidden; margin:22px 0;
+}
+.modal-facts div{ background:var(--panel-2); padding:12px 14px; }
+.modal-facts dt{ font-family:var(--mono); font-size:9px; letter-spacing:.14em; color:var(--dim); }
+.modal-facts dd{ margin:5px 0 0; font-size:13px; }
+.modal-sum{ font-size:14px; line-height:2; color:var(--muted); white-space:pre-line; }
+.modal-tags{ display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; }
+.modal-tags span{
+  font-family:var(--mono); font-size:10px; letter-spacing:.08em;
+  padding:6px 10px; border-radius:999px; border:1px solid var(--line); color:var(--muted);
+}
+.modal-act{ margin-top:24px; display:flex; gap:10px; flex-wrap:wrap; }
+
+/* =============================================================
+   10. 光标点（仅精细指针设备）
+   ============================================================= */
+.cursor{
+  position:fixed; left:0; top:0; width:16px; height:16px; border-radius:50%;
+  background:var(--accent); mix-blend-mode:difference;
+  pointer-events:none; z-index:95;
+  transform:translate(-50%,-50%);
+  transition:width .25s, height .25s, opacity .25s;
+  opacity:0;
+}
+.cursor.is-hover{ width:34px; height:34px; }
+@media (hover:none), (pointer:coarse){ .cursor{ display:none; } }
+
+
+/* =============================================================
+   10b. 右下角悬浮按钮：微信二维码 / 回到页首
+   ============================================================= */
+.fab{
+  position:fixed; right:clamp(14px,2.4vw,26px); bottom:clamp(14px,2.4vw,26px);
+  z-index:78; display:flex; flex-direction:column; gap:10px;
+}
+.fab-btn{
+  width:46px; height:46px; border-radius:50%; display:grid; place-items:center;
+  border:1px solid var(--line); color:var(--muted);
+  background:color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 12px 26px -16px rgba(0,0,0,.55);
+  transition:color .25s, border-color .25s, transform .25s, opacity .3s;
+}
+.fab-btn:hover{ color:var(--accent); border-color:var(--accent); transform:translateY(-2px); }
+.fab-btn svg{ width:20px; height:20px; }
+#topBtn{ opacity:0; pointer-events:none; transform:translateY(8px); }
+#topBtn.on{ opacity:1; pointer-events:auto; transform:none; }
+.wx-pop{
+  position:fixed; right:clamp(14px,2.4vw,26px); bottom:calc(clamp(14px,2.4vw,26px) + 112px);
+  z-index:79; width:206px; padding:13px 13px 11px; border:1px solid var(--line); border-radius:16px;
+  background:color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 26px 50px -30px rgba(0,0,0,.7);
+  opacity:0; transform:translateY(10px) scale(.96); pointer-events:none;
+  transition:opacity .25s, transform .25s;
+}
+.wx-pop.on{ opacity:1; transform:none; pointer-events:auto; }
+.wx-pop img{ width:100%; height:auto; border-radius:10px; background:#fff; }
+.wx-pop p{ margin:9px 0 0; text-align:center; color:var(--muted);
+  font-family:var(--mono); font-size:10px; letter-spacing:.08em; }
+@media (max-width:640px){
+  .fab-btn{ width:42px; height:42px; }
+  .wx-pop{ width:186px; }
+}
+
+/* =============================================================
+   11. 响应式
+   ============================================================= */
+@media (max-width:900px){
+  .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:1024px){
+  .book-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .svc-list{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:680px){
+  body{ font-size:15px; }
+  .nav{ display:none; }
+  .filters{ top:61px; }
+  .grid{ grid-template-columns:1fr; }
+  .book-grid{ grid-template-columns:1fr; }
+  .svc-list{ grid-template-columns:1fr; }
+  .contact-in{ grid-template-columns:1fr; }
+  .qr-box{ width:160px; }
+  .sec-head{ flex-direction:column; align-items:flex-start; }
+  .modal-hero{ aspect-ratio:4/3; }
+}
+
+/* 尊重系统的减弱动效设置 */
+@media (prefers-reduced-motion:reduce){
+  *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  html{ scroll-behavior:auto; }
+  .ticker-track{ animation:none; }
+}
+
+/* 主题切换的圆形扩散（View Transitions 可用时） */
+::view-transition-old(root), ::view-transition-new(root){ animation:none; mix-blend-mode:normal; }
+::view-transition-new(root){ animation:reveal .55s cubic-bezier(.2,.7,.3,1); }
+@keyframes reveal{ from{ clip-path:circle(0% at var(--x, 50%) var(--y, 0%)) } to{ clip-path:circle(140% at var(--x, 50%) var(--y, 0%)) } }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#top">
+      <i class="brand-dot"></i>
+      <b>葛应强</b>
+      <span>Sci-writing</span>
+    </a>
+    <nav class="nav">
+      <a href="#featured">精选</a>
+      <a href="#works">作品</a>
+      <a href="#books">图书</a>
+      <a href="#services">服务</a>
+      <a href="#contact">联系</a>
+      <a href="../index.html">门户</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" aria-label="切换明暗主题">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17L5.6 18.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== 首屏：原版编辑部式（左标题 / 右资质） ===== -->
+  <section class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <p class="hero-eyebrow">Published Works · 2017 — 2026</p>
+          <h1>把看不见的知识<span class="h1-gap"></span><span class="hl-nw">写成读得下去的文章</span></h1>
+          <p class="hero-lede">北京林业大学林学硕士，野生动植物保护与利用专业，昆虫学研究背景，喜欢写科普，很会写科普。</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">约稿与合作
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#featured">精选六篇</a>
+            <a class="btn btn-ghost" href="#works">全部作品</a>
+            <div class="hero-facts">
+              <span><b id="statCount">34</b>篇已发表</span>
+              <span><b id="statRead">100</b>万+首发阅读</span>
+              <span><b>4</b>本图书工作</span>
+              <span><b>8</b>类主题</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-right" id="credentials" aria-label="资质与荣誉">
+          <p class="hr-label">Credentials · 资质</p>
+          <ul class="honor-stack" id="heroHonors"></ul>
+        </aside>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track" id="tickerTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 01 我在写什么，以及为谁写（沿用旧版原文） ===== -->
+  <section class="about-me" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">About · 写作方法</p>
+          <h2>我在写什么，以及为谁写</h2>
+          <p>科普写作和论文写作不同，科学性和趣味性都很重要。</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <div class="am-b"><p><b>主线一、以具体的特殊物种或奇异现象为对象。</b>EPT 水质指标、斑衣蜡蝉入侵、雌雄嵌体、蜉蝣婚飞、钝头蛇的左右不对称头骨——我不写"昆虫世界很奇妙"，我写某一个物种身上那一件具体到能查证的事。</p></div>
+          <div class="am-b"><p><b>主线二、重要结论都要能落到原始文献。</b>写之前先做事实台账：每一条数据对应哪篇论文、哪个数据集、哪次野外观察。做不出来的部分宁可不写，也不靠"据说"补位。</p></div>
+        </div>
+        <div>
+          <h3>我的科普观</h3>
+          <p>科学写作的底线是"可核查"。每篇稿子都走同一条流水线：选题 → 事实台账 → 初稿 → 润色 → 六维审校 → 配图入库。事实台账把每一条数据落到原始文献，这是所有科普稿敢发的前提。</p>
+          <p>而我真正想做的，是把那些"看不见"的知识——微观的、冷门的、被误解的——翻译成一个人愿意读完、读完还能讲给别人的故事。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 精选六篇（3×2 网格） ===== -->
+  <section class="featured" id="featured">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Selected</p>
+          <h2>兼具传播性与科学性的代表作品</h2>
+          <p>按第三方背书强度排序：转载量级、获奖、出版收录。</p>
+        </div>
+        <p class="f-hint">六篇 · 3 × 2 · 点卡片直达原文</p>
+      </div>
+      <div class="f-grid" id="featuredList"></div>
+    </div>
+  </section>
+
+  <!-- ===== 作品网格 ===== -->
+  <section class="works" id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Archive · 2017—2026</p>
+          <h2>全部作品</h2>
+          <p>共 34 篇，已按主题归类，点击封面可跳转至首发原文。</p>
+        </div>
+      </div>
+      <div class="filters">
+        <div class="chips" id="chips"></div>
+      </div>
+      <div class="pagerbar">
+        <span class="pg-info" id="pgInfo"></span>
+        <div class="pager" id="pager"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== 图书 ===== -->
+  <section class="books" id="books">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Books</p>
+          <h2>四本书，四种角色</h2>
+          <p>执笔过、编辑过，也审校过。</p>
+        </div>
+      </div>
+      <div class="book-grid" id="bookGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== 服务 ===== -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Services</p>
+          <h2>可以找我做什么</h2>
+        </div>
+      </div>
+      <div class="svc-list" id="svcList"></div>
+    </div>
+  </section>
+
+  <!-- ===== 联系 ===== -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-in">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>合作邀约</h2>
+          <p>书稿、专栏、课程与研学合作，都从一条微信开始。备注「科普合作」通过更快。</p>
+        </div>
+        <div class="qr-box">
+          <img src="assets/img/wx-qrcode.png" alt="微信二维码：扫码添加葛应强">
+          <span>微信 · 扫码添加</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <b><i class="brand-dot"></i>葛应强 · 科普写作</b>
+        <p>昆虫学硕士 · 科普作家 · 中国科普作家协会会员</p>
+      </div>
+      <div class="foot-links">
+        <a href="../index.html">← 个人门户</a>
+        <a href="../摄影/index.html">自然摄影 ↗</a>
+        <a href="../课程/index.html">课程产品集 ↗</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 葛应强 · 科普写作</span>
+      <span>34 篇已刊 · 100 万+首发阅读</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 右下角悬浮按钮：微信二维码 / 回到页首 ===== -->
+<div class="fab">
+  <button class="fab-btn" id="wxBtn" type="button" aria-label="查看微信二维码" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 4.5h6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H13l-3.2 2.6v-2.6H9a2 2 0 0 1-1.6-.8"/><path d="M4.5 9.4h7.6a1.8 1.8 0 0 1 1.8 1.8v3.9a1.8 1.8 0 0 1-1.8 1.8H10l-2.9 2.3v-2.3H4.5A1.8 1.8 0 0 1 2.7 15v-3.9A1.8 1.8 0 0 1 4.5 9.4z" opacity=".55"/></svg>
+  </button>
+  <button class="fab-btn" id="topBtn" type="button" aria-label="回到页首">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 19V6M6 11.5l6-6 6 6"/></svg>
+  </button>
+</div>
+<div class="wx-pop" id="wxPop" role="dialog" aria-label="微信二维码">
+  <img src="assets/img/wx-qrcode.png" alt="微信二维码：扫码添加葛应强" width="180" height="180" loading="lazy" decoding="async">
+  <p>微信 · 扫码备注「作品」</p>
+</div>
+
+<!-- ===== 详情弹层 ===== -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-panel" id="modalPanel">
+    <button class="modal-close" id="modalClose" aria-label="关闭">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="modal-hero"><img id="modalImg" alt=""></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ===== 数据层（内容唯一来源） ===== -->
+<script>
+/* ===================================================================
+   科普作品集 · 数据底稿
+   数据源：
+   - 已发表科普作品清单（内部维护，主表 28 篇已发表）
+   - 中国科协 2017 年度研究生科普能力提升项目「蝇类秘史」4 篇
+   口径说明见页面脚注。
+   =================================================================== */
+
+/* 主题归类：按「主题简介」的学科指向归纳，不按发表媒体归类 */
+const THEMES = [
+  { id: 'all',   name: '全部',     en: 'All' },
+  { id: 'env',   name: '生态与环境', en: 'Ecology' },
+  { id: 'morph', name: '形态与拟态', en: 'Morphology' },
+  { id: 'bee',   name: '传粉与共生', en: 'Pollination' },
+  { id: 'human', name: '昆虫与人类', en: 'Human & Insect' },
+  { id: 'tech',  name: '防治与应用', en: 'Applied' },
+  { id: 'fly',   name: '蝇类专题',  en: 'Diptera' },
+  { id: 'nature',name: '自然与文明', en: 'Nature & Culture' }
+];
+
+const ARTICLES = [
+  {
+    id: 'a01-ept', theme: 'env', platform: '科学大院', date: '2020.12.08',
+    title: '水里什么虫子越多，说明水质越好？',
+    summary: '蜉蝣、石蝇、蜻蛉三个目合称 EPT，是国际通行的水质生物指标。这篇从"底栖动物怎么告诉你河流健康"切入，把一套原本只在监测报告里出现的指数写成了普通人能用的判断框架。',
+    tags: ['EPT 指数', '水质监测', '底栖动物'],
+    honors: ['2020 年度十佳', '2025 年中科院学部 70 周年纪念出版 · 科学出版社《探奇：有点冷的科学知识》收录'],
+    metrics: { read: '3.2W', fee: null, date: '2020.12.08' },
+    url: 'https://mp.weixin.qq.com/s/wdW_Hig-49lP-wJc1Cz6Zg',
+    img: 'assets/img/a01-ept.jpg'
+  },
+  {
+    id: 'a02-reindeer', theme: 'nature', platform: '中国科普博览', date: '2020.12.25',
+    title: '不怕冷、眼神好、易推倒……驯鹿还有啥不为人知的特点？！',
+    summary: '驯鹿能看见紫外线、能被风雪推着走、雄鹿的鹿角一年掉一次重来。这篇写的是圣诞节那天最容易和圣诞老人一起被误解的动物，也是我第一次做"节令 + 物种"的组合选题。',
+    tags: ['驯鹿', '鄂温克族', '节令选题'],
+    honors: ['科普中国品牌共创'],
+    metrics: { read: '1W', fee: null, date: '2020.12.25' },
+    url: 'https://www.toutiao.com/article/6910085118514250254/',
+    img: 'assets/img/a02-reindeer.jpg'
+  },
+  {
+    id: 'a03-lanternfly', theme: 'tech', platform: '科学大院', date: '2021.01.26',
+    title: '美国多地被隔离，原因不是病毒，而是虫子……',
+    summary: '斑衣蜡蝉从美国宾州隔离区往外扩散的那几年，一颗小小的虫卵让整个农业部门紧张。这篇写的是入侵物种怎么扩散、怎么被监测，以及人为什么会被"寄生物"吓到。',
+    tags: ['斑衣蜡蝉', '生物入侵', '国际海关日'],
+    honors: ['2021 年度十佳', '改编视频推送至中国科普博览（B站 + 知乎）'],
+    metrics: { read: '3.6W', fee: null, date: '2021.01.26' },
+    url: 'https://mp.weixin.qq.com/s/5sz7BjqJ_uPOYVym4tjb4A',
+    img: 'assets/img/a03-lanternfly.jpg'
+  },
+  {
+    id: 'a04-leafcutter-ant', theme: 'bee', platform: '科学大院', date: '2021.03.10',
+    title: '这里是蚂蚁农场，我种田的地方！',
+    summary: '切叶蚁不吃叶子，它们种的是真菌。这篇写的是蚂蚁如何经营一座地下农场、为什么它们几乎从不开除工人——一套没有管理学教材的协作范式。',
+    tags: ['切叶蚁', '真 fungus 农业', '共生'],
+    honors: [],
+    metrics: { read: '6K', fee: null, date: '2021.03.10' },
+    url: 'https://mp.weixin.qq.com/s/HMd8OHw7x9_RWY3gN120SA',
+    img: 'assets/img/a04-leafcutter-ant.jpg'
+  },
+  {
+    id: 'a05-antarctic-midge', theme: 'env', platform: '果壳', date: '2021.04.22',
+    title: '好讨厌虫子啊，生活在南极就好了……南极摇蚊：Hello？',
+    summary: '南极摇蚊是唯一一种真正生活在南极的昆虫，它的幼虫能在 −60℃ 里结冰越冬。这篇从"最讨厌虫子的地方偏偏住着虫"这个反差切入，写极地昆虫的适应策略。',
+    tags: ['南极摇蚊', '极地', '低温适应'],
+    honors: [],
+    metrics: { read: '6.9W', fee: null, date: '2021.04.22' },
+    url: 'https://mp.weixin.qq.com/s/M_E5o-IfDt356Yuk2xzmTw',
+    img: 'assets/img/a05-antarctic-midge.jpg'
+  },
+  {
+    id: 'a06-tsetse-birth', theme: 'fly', platform: '科学大院', date: '2021.05.09',
+    title: '有的昆虫妈妈，生出来的娃娃跟自己一样大',
+    summary: '采采蝇不产卵，直接把一只已经发育完全的幼虫生出来。这篇在母亲节写"昆虫妈妈"，讲的是腺养胎生这种极端生殖方式，以及它和采采蝇病的关系。',
+    tags: ['采采蝇', '腺养胎生', '母亲节选题', '蝇类专题'],
+    honors: [],
+    metrics: { read: '1.5W', fee: null, date: '2021.05.09' },
+    url: 'https://mp.weixin.qq.com/s/m7-VkmJyv4rPhXYorkodqA',
+    img: 'assets/img/a06-tsetse-birth.jpg'
+  },
+  {
+    id: 'a07-cave-insect', theme: 'env', platform: '博物', date: '2021.05.18',
+    title: '笑死，看个破蚊子居然看出了美感',
+    summary: '洞螈、盲蛛、洞穴甲虫——长期没有光的地方，生物会长成完全不同的样子。这篇从美学角度写洞穴生物的退化与特化，封面用的就是"看个破蚊子看出了美感"这句网络腔。',
+    tags: ['洞穴昆虫', '趋同演化', '退化'],
+    honors: [],
+    metrics: { read: '6W', fee: null, date: '2021.05.18' },
+    url: 'https://mp.weixin.qq.com/s/-VRHk9LbsjpJ4OuIywUkjg',
+    img: 'assets/img/a07-cave-insect.jpg'
+  },
+  {
+    id: 'a08-hornet-show', theme: 'morph', platform: '科学大院', date: '2021.09.17',
+    title: '在这场"百变胡蜂秀"中，谁才是昆虫界大"模"王',
+    summary: '熊蜂、天牛、叶蝉、透翅蛾——一堆看起来毫不相干的虫子凑在一起，其实都在演同一场戏：长得像胡蜂。这篇写贝氏拟态在胡蜂身上的系统表演。',
+    tags: ['胡蜂', '贝氏拟态', '警戒色'],
+    honors: [],
+    metrics: { read: '7K', fee: null, date: '2021.09.17' },
+    url: 'https://mp.weixin.qq.com/s/uFhhcAYI6Dpk_0wd_GdN4Q',
+    img: 'assets/img/a08-hornet-show.jpg'
+  },
+  {
+    id: 'a09-fall-webworm', theme: 'tech', platform: '科学大院', date: '2021.11.10',
+    title: '美国白蛾卷土重来，我方寄生小蜂出动！',
+    summary: '美国白蛾是典型的"外来户 + 内部叛徒"：它扩张得快，但天敌也跟着一起被引进来了。这篇讲生物防治里最漂亮的逻辑——用一只能专门找到它的寄生蜂去精确打击。',
+    tags: ['美国白蛾', '寄生蜂', '生物防治'],
+    honors: [],
+    metrics: { read: '1.5W', fee: null, date: '2021.11.10' },
+    url: 'https://mp.weixin.qq.com/s/MPHScZw7q7IW2Im4SMUmkQ',
+    img: 'assets/img/a09-fall-webworm.jpg'
+  },
+  {
+    id: 'a10-gynandromorph', theme: 'morph', platform: '科学大院', date: '2021.12.14',
+    title: '"价值百万"的阴阳蝶？身体竟一半是雌性，一半是雄性……',
+    summary: '雌雄嵌体：一只蝴蝶身上同时长着雌性和雄性的组织。这篇把一个稀有到可以卖钱的形态学现象，写成性别决定机制的一次意外实验——背后是双翅目那套双套管性别决定系统。',
+    tags: ['雌雄嵌体', '阴阳蝶', '性别决定'],
+    honors: [],
+    metrics: { read: '8K', fee: null, date: '2021.12.14' },
+    url: 'https://mp.weixin.qq.com/s/UVS8kn32OVkfTeiYq6fxiA',
+    img: 'assets/img/a10-gynandromorph.jpg'
+  },
+  {
+    id: 'a11-mycophagous-ladybird', theme: 'morph', platform: '博物', date: '2022.01.29',
+    title: '我看看谁会害怕这么漂亮的小虫虫！',
+    summary: '食菌瓢虫是瓢虫里的一支"素食部队"，专吃植物上的白粉病真菌。这篇写的是瓢虫科里被严重低估的一支——颜色漂亮到不像是瓢虫，却在做正经的植保工作。',
+    tags: ['食菌瓢虫', '生物防治', '白粉病'],
+    honors: [],
+    metrics: { read: '7W', fee: null, date: '2022.01.29' },
+    url: 'https://mp.weixin.qq.com/s/bTPGFqumuor3LZSA2MRQXA',
+    img: 'assets/img/a11-mycophagous-ladybird.jpg'
+  },
+  {
+    id: 'a12-firefly-light', theme: 'env', platform: '科学大院', date: '2022.03.08',
+    title: '夜间灯光：萤火虫追爱路上的绊脚石',
+    summary: '光污染让萤火虫找不到同类。这篇写的是人工夜光如何干扰萤火虫的求偶信号——LED 比钠灯更致命，因为它的蓝光波段正好落在萤火虫感光器的敏感区。',
+    tags: ['萤火虫', '光污染', '环境议题'],
+    honors: [],
+    metrics: { read: '4K', fee: null, date: '2022.03.08' },
+    url: 'https://mp.weixin.qq.com/s/AXtU79AMAVGMKETxmQV7Rw',
+    img: 'assets/img/a12-firefly-light.jpg'
+  },
+  {
+    id: 'a13-alpine-pollinator', theme: 'fly', platform: '科学大院', date: '2022.04.08',
+    title: '蜜蜂的生意，苍蝇也来掺一脚…',
+    summary: '随着海拔升高，传粉者从蜜蜂悄悄换成了蝇类。这篇用花粉 DNA 条形码的技术视角，写高山草甸传粉网络的物种替换，纠正"蜜蜂才是主力"的常识。',
+    tags: ['传粉网络', '高山草甸', '花粉条形码', '蝇类专题'],
+    honors: [],
+    metrics: { read: '5K', fee: null, date: '2022.04.08' },
+    url: 'https://mp.weixin.qq.com/s/HHh7aY3JSTZXklyyBEc7JA',
+    img: 'assets/img/a13-alpine-pollinator.jpg'
+  },
+  {
+    id: 'a14-leafcutter-bee', theme: 'bee', platform: '科学大院', date: '2022.09.01',
+    title: '为了孩子的房子，它盯上了你家种的花',
+    summary: '切叶蜂要用叶子给自己砌育儿房，代价是薅秃你家的月季。这篇讲的是独居蜂的筑巢行为学，以及它作为传粉者的实际贡献量级。',
+    tags: ['切叶蜂', '独居蜂', '传粉'],
+    honors: [],
+    metrics: { read: '8K', fee: null, date: '2022.09.01' },
+    url: 'https://mp.weixin.qq.com/s/WWINa8o8Yh2BOCa1uqAqnw',
+    img: 'assets/img/a14-leafcutter-bee.jpg'
+  },
+  {
+    id: 'a15-cockroach-product', theme: 'human', platform: '博物', date: '2022.10.14',
+    title: '怕了，蟑螂制品悄摸闯进了我的生活！',
+    summary: '康复新液、蟑螂蛋白粉、虫草胶囊——蟑螂正在变成药。这篇写的是东亚传统医药里蟑螂的现代产业化路径，也是我做"被误解物种"系列的起点。',
+    tags: ['蟑螂', '传统医药', '产业化'],
+    honors: [],
+    metrics: { read: '10W+', fee: null, date: '2022.10.14' },
+    url: 'https://mp.weixin.qq.com/s/DoO3BbB9ws4OUf6Udzl8eQ',
+    img: 'assets/img/a15-cockroach-product.jpg'
+  },
+  {
+    id: 'a16-sticky-trap', theme: 'tech', platform: '科学大院', date: '2022.11.09',
+    title: '害虫来了？给它点颜色看看！',
+    summary: '黄板、蓝板、绿板，不同颜色对应不同目标害虫。这篇把趋色性防治写成了"给虫子开一张色彩处方"，顺带讲清楚色板到底该怎么用才有效。',
+    tags: ['趋色性', '诱虫板', '物理防治'],
+    honors: [],
+    metrics: { read: '5K', fee: null, date: '2022.11.09' },
+    url: 'https://mp.weixin.qq.com/s/zisIdgyVu6bKIy2Te55xsQ',
+    img: 'assets/img/a16-sticky-trap.jpg'
+  },
+  {
+    id: 'a17-avatar-whaling', theme: 'nature', platform: '博物', date: '2022.12.26',
+    title: '《阿凡达 2》中令人心碎的情节，竟是真实发生过的历史',
+    summary: '捕鲸业的兴衰、国际捕鲸管制的博弈、美洲原住民与鲸油的纠葛。这篇从一部电影切进一部真实历史——用能源叙事的视角看《白鲸》背后的美国捕鲸业。',
+    tags: ['捕鲸史', '《阿凡达 2》', '能源叙事'],
+    honors: ['改编视频推送至 B站 + 抖音'],
+    metrics: { read: '10W+', fee: null, date: '2022.12.26' },
+    url: 'https://mp.weixin.qq.com/s/CRHD3zEMmii3pXYuqT1pBQ',
+    img: 'assets/img/a17-avatar-whaling.jpg'
+  },
+  {
+    id: 'a18-mantis-cannibalism', theme: 'morph', platform: '科学大院', date: '2023.07.24',
+    title: '公螳螂会乖乖等着被吃？它们才没那么傻呢……',
+    summary: '同类相食不只是螳螂的专利，从飞蝗到草地贪夜蛾都有。这篇写的是捕食与被捕食之间的进化军备竞赛，用种群动力学模型解释"为什么自相残杀反而是策略"。',
+    tags: ['同类相食', '螳螂', '种群动力学'],
+    honors: [],
+    metrics: { read: '1.3W', fee: null, date: '2023.07.24' },
+    url: 'https://mp.weixin.qq.com/s/Np1_PZtnlK35ySdCwdM7rA',
+    img: 'assets/img/a18-mantis-cannibalism.jpg'
+  },
+  {
+    id: 'a19-jasper-mimicry', theme: 'morph', platform: '科学大院', date: '2023.11.27',
+    title: '羊村群羊如何拿捏灰太狼？建议向虫子学习一下',
+    summary: '实蝇披着跳蛛的皮，横跨物种界的吉氏拟态。这篇用"灰太狼"这个网络梗讲寄生—寄主之间的欺骗军备竞赛，是我在拟态系列里最满意的一篇。',
+    tags: ['吉氏拟态', '实蝇', '跳蛛'],
+    honors: [],
+    metrics: { read: '4K', fee: null, date: '2023.11.27' },
+    url: 'https://mp.weixin.qq.com/s/kA5Yc-Su-qSh8ok58eujTg',
+    img: 'assets/img/a19-jasper-mimicry.jpg'
+  },
+  {
+    id: 'a20-snail-snake', theme: 'morph', platform: '科学大院', date: '2024.06.07',
+    title: '喜欢蛇的朋友有福了，爱吃蜗牛的大眼萌蛇来喽~',
+    summary: '钝头蛇左右不对称的头骨，正好对应蜗牛壳的旋向。这篇写的是"武器与盾牌"的匹配演化——蛇把头骨拧成左右不对称，只为撬开右旋的壳。',
+    tags: ['钝头蛇', '捕食特化', '头骨不对称'],
+    honors: [],
+    metrics: { read: '1.6W', fee: null, date: '2024.06.07' },
+    url: 'https://mp.weixin.qq.com/s/CHj9bUF3EWzMUVorw9onbg',
+    img: 'assets/img/a20-snail-snake.jpg'
+  },
+  {
+    id: 'a21-frog-steam', theme: 'env', platform: '科学大院', date: '2024.09.02',
+    title: '青蛙蒸桑拿？不为保健为保命',
+    summary: '壶菌病正在全球范围内杀死两栖类，而蛙们唯一的自救办法是自己发烧。这篇写的是"用高温杀死真菌"这种反直觉的生存策略，也是我写环境议题时最想讲清楚的因果链。',
+    tags: ['壶菌病', '两栖类', '疾病生态'],
+    honors: [],
+    metrics: { read: '4K', fee: null, date: '2024.09.02' },
+    url: 'https://mp.weixin.qq.com/s/EuhhvnPOXjgvZDJOMuJKpQ',
+    img: 'assets/img/a21-frog-steam.jpg'
+  },
+  {
+    id: 'a22-mayfly-swarm', theme: 'env', platform: '科普中国', date: '2024.09.10',
+    title: '15 厘米厚的虫子，布满道路，惨死车轮下！而这竟是环境变好的征兆……',
+    summary: '蜉蝣婚飞，成片羽化，铺满路面。这是水质改善的直接信号，也是我唯一一篇发在"科普中国"的作品——把一个看起来像灾难的场景翻成一张生态成绩单。',
+    tags: ['蜉蝣', '婚飞', '水质'],
+    honors: ['果壳转发', '诸多地方科协转载', '科普中国趣味百科年度十佳文章（2026-11-08 补录）'],
+    metrics: { read: '10W+', fee: null, date: '2024.09.10' },
+    url: 'https://mp.weixin.qq.com/s/FhnEbChiFAhUjXTJ63ogmw',
+    img: 'assets/img/a22-mayfly-swarm.jpg'
+  },
+  {
+    id: 'a23-moth-midge', theme: 'human', platform: '科学大院', date: '2025.06.03',
+    title: '这种虫子，看到一只，那你家里很可能有一万只（不是蟑螂）！',
+    summary: '白斑蛾蚋，室内潮湿角落的隐形住户。这篇写的是"家里有一万只"的推断逻辑——从一只成虫到整个繁殖链，还顺带做了家庭虫害排查清单。',
+    tags: ['白斑蛾蚋', '家庭虫害', '排查'],
+    honors: ['央视新闻网、新华社、人民日报、广州日报等转载'],
+    metrics: { read: '8.8W', fee: null, date: '2025.06.03' },
+    url: 'https://mp.weixin.qq.com/s/48t1qADrNbq9ivAv2B0sWw',
+    img: 'assets/img/a23-moth-midge.jpg'
+  },
+  {
+    id: 'a24-human-botfly', theme: 'fly', platform: '科学大院', date: '2025.08.12',
+    title: '小心！这种恐怖的寄生苍蝇会钻到你的皮肤里面……',
+    summary: '人肤蝇在美洲叮人后把卵留在伤口，人去海边旅游也可能中招。这篇针对"非洲马蝇"的谣言做科普辟谣，同时给出真实的旅行防护建议。',
+    tags: ['人肤蝇', '旅行卫生', '辟谣', '蝇类专题'],
+    honors: [],
+    metrics: { read: '2.7W', fee: null, date: '2025.08.12' },
+    url: 'https://mp.weixin.qq.com/s/xDytGp7I6NjIDTAeFnOWrA',
+    img: 'assets/img/a24-human-botfly.jpg'
+  },
+  {
+    id: 'a25-seagull-feeding', theme: 'env', platform: '博物', date: '2026.09.18',
+    title: '喂海鸥很治愈，可代价大得惊人？',
+    summary: '一根薯条对海鸥是饱餐，对城市是麻烦。这篇从行为生态学讲投喂如何改变海鸥的种群结构、疾病传播和城市共生的边界，是我在"城市生态"方向上最完整的一篇。',
+    tags: ['投喂海鸥', '城市生态', '行为学'],
+    honors: ['改编视频', '签约二次分发'],
+    metrics: { read: '4.4W', fee: null, date: '2026.09.18' },
+    url: 'https://mp.weixin.qq.com/s/IlZbDTXSrqsJjM5uEEOY3g',
+    img: 'assets/img/a25-seagull-feeding.jpg'
+  },
+  {
+    id: 'a26-erhai-lantern', theme: 'env', platform: '科学大院', date: '2026.09.21',
+    title: '禁止捕鱼的大理洱海，湖面上怎么点满了渔灯？',
+    summary: '洱海禁渔之后，湖面反而亮起了成片渔灯。这篇写的是"以灯诱捕"的替代捕捞方式，是一篇从环境政策落地反推生态问题的稿子。',
+    tags: ['洱海', '生态治理', '文旅'],
+    honors: [],
+    metrics: { read: '1.6W', fee: null, date: '2026.09.21' },
+    url: 'https://mp.weixin.qq.com/s/dlUKcWjlqAWWVBDHSFQsrw',
+    img: 'assets/img/a26-erhai-lantern.jpg'
+  },
+  {
+    id: 'a32-deaths-head-hawkmoth', theme: 'morph', platform: '博物', date: '2026.10.30',
+    title: '万圣节的恐怖担当，是只会尖叫的蛾子？',
+    summary: '鬼脸天蛾背上的骷髅脸不是谁画上去的，是人脑在乱花纹里找面孔的本能。这篇讲透它的发声器官、偷蜂蜜的化学伪装，以及那声 8 千赫兹的"鬼叫"其实是它被抓住时唯一的救命招。',
+    tags: ['鬼脸天蛾', '面孔空想', '天蛾科'],
+    honors: [],
+    metrics: { read: '1.1W', fee: null, date: '2026.10.30' },
+    url: 'https://mp.weixin.qq.com/s/WTM8XBknLXYVhbmZVbPC1w',
+    img: 'assets/img/a32-deaths-head-hawkmoth.jpg'
+  },
+
+  {
+    id: 'a27-cockroach-protein', theme: 'human', platform: '科学大院', date: '2026.10.28',
+    title: '吃蟑螂粉能代替蛋白粉？我劝你别这么干……',
+    summary: '蟑螂粉的蛋白质含量确实高，但它的纤维结构、过敏原和加工方式都和传统蛋白粉不同。这篇是一篇带着明确结论的科普辟谣。',
+    tags: ['蟑螂蛋白粉', '膳食蛋白', '辟谣'],
+    honors: [],
+    metrics: { read: '7K', fee: null, date: '2026.10.28' },
+    url: 'https://mp.weixin.qq.com/s/CPW-ZhphKCWW8Fgwpws5Dw',
+    img: 'assets/img/a27-cockroach-protein.jpg'
+  },
+
+  {
+    id: 'a33-bean-doll', theme: 'human', platform: '果壳', date: '2026.11.06',
+    title: '半夜总有啃咬声，是谁在吃我的云南豆荚娃娃？',
+    summary: '从一只被啃坏的豆荚手作出发，顺着木屑和啃咬声找到仓储昆虫的痕迹。选题来自我自己的生活现场，落点在"家里的干货为什么会莫名其妙变轻"。',
+    tags: ['仓储昆虫', '云南手作', '生活观察'],
+    honors: ['编辑约稿'],
+    metrics: { read: '8.5W', fee: null, date: '2026.11.06' },
+    url: 'https://mp.weixin.qq.com/s/KJGZ-iNBr-SSTkyD3RHkjg',
+    img: 'assets/img/a33-bean-doll.jpg'
+  },
+
+  {
+    id: 'a34-backswimmer', theme: 'env', platform: '博物', date: '2026.11.16',
+    title: '多亏同事这句话，我找到了一起躺平的划水搭子！',
+    summary: '仰泳蝽用腹部携带的气膜呼吸，倒着游也能活得很好。这篇把一个"反着来"的水生昆虫讲成了躺平哲学，同时改成了长视频版本。',
+    tags: ['仰泳蝽', '水生昆虫', '呼吸方式'],
+    honors: ['编辑约稿 / 改编长视频'],
+    metrics: { read: '1.1W', fee: null, date: '2026.11.16' },
+    url: 'https://mp.weixin.qq.com/s/NdRUaDdHo4kF60bZMSfMJQ',
+    img: 'assets/img/a34-backswimmer.jpg',
+    credit: 'Thomas Fuhrmann / CC BY-SA 4.0'
+  },
+
+  /* ---- 中国科协"蝇类秘史"项目 4 篇（2017 年） ---- */
+  {
+    id: 'c01-fly-predators', theme: 'fly', platform: '科普中国（中国科协）', date: '2017.11.27',
+    title: '完全颠覆你的认知！人人都讨厌的苍蝇，竟然这么神奇',
+    summary: '蝇类里最反直觉的一支：不吃腐烂物，专门猎食别的虫。这篇是我研究生期间做的"蝇类秘史"专题第一篇，也是我第一次意识到——把一个类群讲清楚，比讲一个物种更有力量。',
+    tags: ['中国科协项目', '捕食性蝇类', '食蚜蝇'],
+    honors: ['中国科协 2017 年度研究生科普能力提升项目资助', '项目累计阅读量超 3 万'],
+    metrics: { read: null, fee: null, date: '2017.11.27' },
+    url: 'https://baijiahao.baidu.com/s?id=1585150170437782784&wfr=spider&for=pc',
+    img: 'assets/img/c01-fly-predators.jpg'
+  },
+  {
+    id: 'c02-fly-overview', theme: 'fly', platform: '中国数字科技馆（中国科技馆）', date: '2017.09.08',
+    title: '【大文豪说科普】第70期 与众不同的蝇类秘史',
+    summary: '【大文豪说科普】第 70 期。这篇是整个蝇类项目的总纲，用"苍蝇的另一面"破题，把蝇类在演化上的成功讲成了一个关于多样性的故事。也是我第一次参与"大文豪说科普"这个 IP。',
+    tags: ['中国科协项目', '大文豪说科普', '第 70 期'],
+    honors: ['中国科协 2017 年度研究生科普能力提升项目资助'],
+    metrics: { read: '2.1W', fee: null, date: '2017.09.08' },
+    url: 'https://mp.weixin.qq.com/s/rxZbRb1AN5maaKVNfyOvew',
+    img: 'assets/img/c02-fly-overview.jpg'
+  },
+  {
+    id: 'c03-ant-associated-flies', theme: 'fly', platform: '科学大院（中科院）', date: '2017.11.29',
+    title: '苍蝇还有不吃粑粑的？嗯，有！还特萌！',
+    summary: '巢穴蚜蝇住在蚂蚁巢里，以蚂蚁为食，成虫还长得像蜜蜂。这是蝇类项目里传播最广的一篇，也是科普中国转载后阅读量最高的一篇——"可爱 + 猎奇"是科普选题最稳的组合。',
+    tags: ['中国科协项目', '蚁栖性蝇类', '巢穴蚜蝇'],
+    honors: ['中国科协 2017 年度研究生科普能力提升项目资助', '科普中国转载'],
+    metrics: { read: '7K', fee: null, date: '2017.11.29' },
+    url: 'https://mp.weixin.qq.com/s/ERxHmUzeowA-0VFHxgmiIQ',
+    img: 'assets/img/c03-ant-associated-flies.jpg'
+  },
+  {
+    id: 'c04-parasitic-flies', theme: 'fly', platform: '科学大院', date: '2017.12.07',
+    title: '寄生性蝇类：牢牢跟着饭票，饿不着！',
+    summary: '寄蝇把卵产在其他昆虫身上，让幼虫替自己吃宿主的肉。这是蝇类项目的收尾篇，写的是昆虫世界最狠的一种合作——不对，是剥削。',
+    tags: ['中国科协项目', '寄生性蝇类', '寄蝇'],
+    honors: ['中国科协 2017 年度研究生科普能力提升项目资助'],
+    metrics: { read: '4K', fee: null, date: '2017.12.07' },
+    url: 'https://mp.weixin.qq.com/s/Rom8nngQq3DbR-WGyHqIrg',
+    img: 'assets/img/c04-parasitic-flies.jpg'
+  }
+];
+
+/* ---- 图书类 ---- */
+const BOOKS = [
+  {
+    id: 'b02-changtan', theme: 'all', kind: '图书主笔', year: '2026',
+    title: '《长潭森林时光环》',
+    subtitle: '独立执笔 · 已完稿待出版',
+    summary: '从大纲到成稿，我为这本保护区科普书独立执笔全书——地衣苔藓、蕨类王朝、昆虫与鸟类，把演化尺度落到脚下的每一条步道。为此我多次实地踩点、拍摄采风，让科学叙述扎根真实景观。',
+    tags: ['保护区科普', '地衣苔藓', '桫椤', '实地踩点'],
+    honors: ['受邀执笔保护区科普全书'],
+    meta: '长潭自然保护区 / 全书执笔',
+    pubAuthor: ['葛应强'],
+    pubPublisher: '广东蕉岭长潭省级自然保护区',
+    pubYear: null,
+    img: 'assets/img/b02-changtan.jpg'
+  },
+  {
+    id: 'b01-tanqi', theme: 'all', kind: '出版收录', year: '2026',
+    title: '《探奇：有点冷的科学知识》',
+    subtitle: '科学出版社 · 中科院学部 70 周年纪念出版',
+    summary: '这本书收录了我那篇 EPT 水质指标的文章，是从一篇 3 万阅读的公众号科普，到正式出版物的一次跨越。书里还有另外 9 位科学家的作品——我的是其中一篇。',
+    tags: ['科学出版社', '中科院学部 70 周年', '文章收录'],
+    honors: ['文章被正式出版收录'],
+    meta: '科学出版社 / 2026',
+    douban: 'https://book.douban.com/subject/38546249/',
+    pubAuthor: ['尹浩'],
+    pubPublisher: '科学出版社',
+    pubYear: 2026,
+    img: 'assets/img/b01-tanqi.jpg'
+  },
+  {
+    id: 'b03-wildlife', theme: 'all', kind: '科学编辑', year: '2019',
+    title: '《初瞳：我和我的野生动物朋友》',
+    subtitle: '中信出版社 · 特邀编辑',
+    summary: '出版社邀我担任这本书的特邀编辑，从内容审读到最终把关。这是我第一次完整参与一本书的编辑流程——和纯写稿不同，编辑要在作者的意图和读者的接受度之间做取舍。',
+    tags: ['图书编辑', '野生动物', '特邀编辑'],
+    honors: ['受邀担任特邀编辑'],
+    meta: '特邀编辑',
+    douban: 'https://book.douban.com/subject/30463577/',
+    pubAuthor: ['王昱珩', '初雯雯'],
+    pubPublisher: '中信出版社',
+    pubYear: 2019,
+    img: 'assets/img/b03-wildlife.jpg'
+  },
+  {
+    id: 'b04-wonder', theme: 'all', kind: '审校编辑', year: '2021',
+    title: '《改变世界的奇思妙想》',
+    subtitle: '中信出版社 · 特邀审定',
+    summary: '这本书我做的不是写作而是审校——核对科学表述、把关术语准确性。这是我在图书链条上承担的另一类角色，每一本经手的书，科学准确性都落在我这里。',
+    tags: ['图书审校', '科学准确性', '术语把关'],
+    honors: ['受邀担任书籍审校'],
+    meta: '审校编辑',
+    douban: 'https://book.douban.com/subject/35510027/',
+    pubAuthor: ['弗雷亚·哈迪'],
+    pubPublisher: '中信出版社',
+    pubYear: 2021,
+    img: 'assets/img/b04-wonder.jpg'
+  }
+];
+
+/* ---- 对外代表作：按第三方背书强度排序（给编辑 / 约稿方快速判断用）----
+   与「作者推荐」（PICK_FEAT）不同：那是作者的专业审美，这里是可查证的机构背书。 */
+const FEATURED = [
+  { id: 'a23-moth-midge',        badge: '央视 · 新华社 · 人民日报转载' },
+  { id: 'a01-ept',               badge: '2020 年度十佳 · 科学出版社收录' },
+  { id: 'a03-lanternfly',        badge: '2021 年度十佳' },
+  { id: 'a15-cockroach-product', badge: '博物 10 万+ 阅读' },
+  { id: 'a17-avatar-whaling',    badge: '博物 10 万+ 阅读 · 改编视频' },
+  { id: 'a22-mayfly-swarm',      badge: '科普中国 10 万+ · 果壳转发' }
+];
+
+/* ---- 首屏荣誉（对外展示，极简，标签统一 4 字） ---- */
+const HONORS = [
+  { k: '作家资质', t: '中国科普作家协会', d: '正式会员' },
+  { k: '获奖作品', t: '中科院年度十佳作品', d: '2020 & 2021 两度获评' },
+  { k: '著编审校', t: '四本图书工作', d: '特辑收录，特邀编辑，全书执笔' },
+  { k: '项目资助', t: '中国科协', d: '2017 研究生科普能力提升项目' }
+];
+
+/* ---- 04 我还能提供什么（对外合作入口） ---- */
+const SERVICES = [
+  { no: 'A', icon: 'pen',  title: '科普约稿与专栏',
+    desc: '公众号、媒体与机构专栏撰稿——从选题、事实台账到成稿，覆盖生态、昆虫、环境议题。' },
+  { no: 'B', icon: 'book', title: '图书撰稿与审定',
+    desc: '科普图书章节主笔、科学审校与术语把关；曾独立执笔保护区全书、审校多部出版物。' },
+  { no: 'C', icon: 'leaf', title: '自然教育与研学',
+    desc: '课程研发、研学线路与讲座设计，依托林学 / 昆虫学背景，把野外观察变成可讲的故事。' },
+  { no: 'D', icon: 'chat', title: '科学传播顾问',
+    desc: '内容策略、事实台账搭建、科普产品方法论咨询——让团队写得出、也审得过。' }
+];
+
+</script>
+
+<!-- ===== 渲染与交互 ===== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- 工具 ---------- */
+  const esc = (s) => String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const $ = (sel) => document.querySelector(sel);
+
+  // 阅读量：'3.2W' → 3.2 万；'6K' → 6 千
+  function readVal(raw) {
+    if (!raw) return { n: '—', u: '' };
+    const s = String(raw);
+    if (/W/i.test(s)) return { n: s.replace(/W\+?/i, ''), u: '万' };
+    if (/K/i.test(s)) return { n: s.replace(/K/i, ''), u: '千' };
+    return { n: s.replace(/\+$/, ''), u: '' };
+  }
+
+  const yearOf = (d) => String(d || '').slice(0, 4);
+
+  /* ---------- 数据整理 ---------- */
+  const sorted = ARTICLES.slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  sorted.forEach((a, i) => { a._no = String(i + 1).padStart(3, '0'); });
+  const themeName = {};
+  THEMES.forEach((t) => { themeName[t.id] = t.name; });
+
+  const state = { theme: 'all', view: 'grid', page: 1 };
+  const visible = () => state.theme === 'all' ? sorted : sorted.filter((a) => a.theme === state.theme);
+  /* 分页沿用旧版设置：宽屏 8 篇/页，≤900px 4 篇/页 */
+  /* 每页固定 6 篇 = 3 列 × 2 行 */
+const perScreen = () => 6;
+
+  /* ---------- 顶部数字 ---------- */
+  $('#statCount').textContent = sorted.length;
+  /* statRead 固定为「100 万+」：跨平台首发阅读的口径是区间值，不随数组重算 */
+
+  /* ---------- 平台跑马灯 ---------- */
+  (function buildTicker() {
+    const names = [];
+    sorted.forEach((a) => { if (names.indexOf(a.platform) < 0) names.push(a.platform); });
+    const one = names.map((n) => `<span class="ticker-item"><i></i>${esc(n)}</span>`).join('');
+    $('#tickerTrack').innerHTML = one + one;   // 复制一份，动画才有无缝衔接
+  })();
+
+  /* ---------- 精选（3×2 网格：整张卡片就是原文外链） ---------- */
+  (function buildFeatured() {
+    $('#featuredList').innerHTML = FEATURED.map((f) => {
+      const a = sorted.find((x) => x.id === f.id);
+      if (!a || !a.url) return '';
+      return `<a class="f-card" href="${esc(a.url)}" target="_blank" rel="noopener" aria-label="阅读原文：${esc(a.title)}">
+        <div class="pic">
+          <span class="f-badge">${esc(f.badge)}</span>
+          <img src="${esc(a.img)}" alt="${esc(a.title)}" loading="lazy" decoding="async">
+        </div>
+        <div class="f-body">
+          <h3>${esc(a.title)}</h3>
+          <div class="meta"><span>${esc(a.platform)} · ${esc(a.date)}</span><span class="f-open">原文 ↗</span></div>
+        </div>
+      </a>`;
+    }).join('');
+  })();
+
+  /* ---------- 筛选 chips ---------- */
+  function buildChips() {
+    const counts = {};
+    sorted.forEach((a) => { counts[a.theme] = (counts[a.theme] || 0) + 1; });
+    $('#chips').innerHTML = THEMES.map((t) => {
+      const n = t.id === 'all' ? sorted.length : (counts[t.id] || 0);
+      if (!n && t.id !== 'all') return '';
+      return `<button class="chip${t.id === state.theme ? ' is-on' : ''}" data-theme="${t.id}">
+        ${esc(t.name)}<span class="n">${n}</span></button>`;
+    }).join('');
+  }
+
+  /* ---------- 作品网格（分页渲染） ---------- */
+  function buildGrid() {
+    const list = visible();
+    const per = perScreen();
+    const pages = Math.max(1, Math.ceil(list.length / per));
+    if (state.page > pages) state.page = pages;
+    if (state.page < 1) state.page = 1;
+    const slice = list.slice((state.page - 1) * per, state.page * per);
+    $('#grid').innerHTML = slice.map((a) => {
+      const r = readVal(a.metrics && a.metrics.read);
+      const tags = (a.tags || []).slice(0, 3);
+      const href = a.url || '';
+      return `<a class="card" href="${esc(href)}"${href ? ' target="_blank" rel="noopener"' : ''} aria-label="阅读原文：${esc(a.title)}">
+        <div class="pic">
+          <span class="theme">${esc(themeName[a.theme] || '')}</span>
+          <div class="pic-tags">${tags.map((t) => `<span>${esc(t)}</span>`).join('')}</div>
+          <img src="${esc(a.img)}" alt="${esc(a.title)}${a.credit ? '（图：' + esc(a.credit) + '）' : ''}" loading="lazy" decoding="async">
+          ${a.credit ? `<span class="pic-credit">${esc(a.credit)}</span>` : ''}
+        </div>
+        <div class="body">
+          <h3>${esc(a.title)}</h3>
+          <p class="sum">${esc(a.summary)}</p>
+          <div class="foot">
+            <span>${esc(a.platform)} · ${esc(a.date)}</span>
+            <span class="arrow">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>`;
+    }).join('');
+    renderPager(list.length, pages);
+    observeCards();
+  }
+
+  /* ---------- 分页器 ---------- */
+  function renderPager(total, pages) {
+    const info = $('#pgInfo');
+    if (info) info.textContent = `${total} 篇 · 第 ${state.page} / ${pages} 页`;
+    const pager = $('#pager');
+    if (!pager) return;
+    let nums = '';
+    for (let i = 1; i <= pages; i++) {
+      nums += `<button class="pg-num${i === state.page ? ' on' : ''}" data-pg="${i}" type="button"
+        aria-label="第 ${i} 页"${i === state.page ? ' aria-current="page"' : ''}>${i}</button>`;
+    }
+    pager.innerHTML =
+      `<button class="pg-btn" data-go="-1" type="button" aria-label="上一页"${state.page === 1 ? ' disabled' : ''}>‹</button>` +
+      `<div class="pg-nums">${nums}</div>` +
+      `<button class="pg-btn" data-go="1" type="button" aria-label="下一页"${state.page === pages ? ' disabled' : ''}>›</button>`;
+  }
+
+  (function bindPager() {
+    const pager = $('#pager');
+    if (!pager) return;
+    pager.addEventListener('click', (e) => {
+      const num = e.target.closest('.pg-num');
+      const btn = e.target.closest('.pg-btn');
+      if (num) state.page = parseInt(num.dataset.pg, 10);
+      else if (btn) state.page += parseInt(btn.dataset.go, 10);
+      else return;
+      buildGrid();
+      $('#works').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    let lastPer = perScreen();
+    window.addEventListener('resize', () => {
+      const per = perScreen();
+      if (per === lastPer) return;
+      lastPer = per;
+      state.page = 1;
+      buildGrid();
+    });
+  })();
+
+  /* ---------- 入场动效（逐张延迟，营造"落位"感） ---------- */
+  let io = null;
+  function observeCards() {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.card').forEach((c) => c.classList.add('is-in'));
+      return;
+    }
+    if (io) io.disconnect();
+    io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        setTimeout(() => el.classList.add('is-in'), i * 45);
+        io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    document.querySelectorAll('.card').forEach((c) => io.observe(c));
+  }
+
+  /* ---------- 图书 ---------- */
+  (function buildBooks() {
+    $('#bookGrid').innerHTML = BOOKS.map((b) => `
+      <article class="book" data-book="${esc(b.id)}" tabindex="0" role="button" aria-label="查看图书：${esc(b.title)}">
+        <div class="pic"><img src="${esc(b.img)}" alt="${esc(b.title)} 封面" loading="lazy" decoding="async"></div>
+        <div class="kind">${esc(b.kind)} · ${esc(b.year)}</div>
+        <h3>${esc(b.title)}</h3>
+        <div class="sub">${esc(b.subtitle)}</div>
+      </article>`).join('');
+
+
+    // 悬停倾斜：跟随鼠标位置的 3D 微倾斜，幅度控制在 6° 以内
+    if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      document.querySelectorAll('.book').forEach((el) => {
+        el.addEventListener('mousemove', (e) => {
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - .5;
+          const y = (e.clientY - r.top) / r.height - .5;
+          el.style.transform = `perspective(900px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateY(-4px)`;
+        });
+        el.addEventListener('mouseleave', () => {
+          el.style.transform = '';
+        });
+      });
+    }
+  })();
+
+  /* ---------- 首屏右栏：资质（四条 2×2，沿用旧版排法） ---------- */
+  $('#heroHonors').innerHTML = HONORS.map((x) => `
+    <li>
+      <span class="hk">${esc(x.k)}</span>
+      <strong class="ht">${esc(x.t)}</strong>
+      <span class="hd">${esc(x.d)}</span>
+    </li>`).join('');
+
+  /* ---------- 服务 ---------- */
+  $('#svcList').innerHTML = SERVICES.map((s) => `
+    <a class="svc" href="#contact">
+      <div class="no">${esc(s.no)}</div>
+      <h4>${esc(s.title)}</h4>
+      <p>${esc(s.desc)}</p>
+    </a>`).join('');
+
+  /* ---------- 弹层 ---------- */
+  const modal = $('#modal');
+  const modalBody = $('#modalBody');
+  const modalImg = $('#modalImg');
+  let lastFocus = null;
+
+  function openModal(id, isBook) {
+    const item = isBook ? BOOKS.find((x) => x.id === id) : sorted.find((x) => x.id === id);
+    if (!item) return;
+    modalImg.src = item.img;
+    modalImg.alt = item.title;
+
+    if (isBook) {
+      modalBody.innerHTML = `
+        <div class="modal-no">BOOK · ${esc(item.year)}</div>
+        <h2>${esc(item.title)}</h2>
+        <div class="modal-plat">${esc(item.subtitle)}</div>
+        <dl class="modal-facts">
+          <div><dt>角色</dt><dd>${esc(item.kind)}</dd></div>
+          <div><dt>出版</dt><dd>${esc(item.meta)}</dd></div>
+          <div><dt>编著</dt><dd>${esc((item.pubAuthor || []).join(' / '))}</dd></div>
+        </dl>
+        <p class="modal-sum">${esc(item.summary)}</p>
+        <div class="modal-tags">${(item.tags || []).map((t) => `<span>${esc(t)}</span>`).join('')}</div>
+        ${item.douban ? `<div class="modal-act"><a class="btn btn-ghost" href="${esc(item.douban)}" target="_blank" rel="noopener">豆瓣条目 ↗</a></div>` : ''}
+      `;
+    } else {
+      return; // 作品卡片已改为直接外链，这里只处理图书
+    }
+
+    lastFocus = document.activeElement;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    $('#modalPanel').scrollTop = 0;
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('#modalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+
+  /* ---------- 点击委托 ---------- */
+  document.addEventListener('click', (e) => {
+    const chip = e.target.closest('.chip');
+    if (chip) {
+      state.theme = chip.dataset.theme;
+      state.page = 1;
+      buildChips(); buildGrid();
+      return;
+    }
+    const book = e.target.closest('.book');
+    if (book) { openModal(book.dataset.book, true); }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const el = e.target.closest('.book');
+    if (!el) return;
+    e.preventDefault();
+    openModal(el.dataset.book, true);
+  });
+
+  /* ---------- 主题切换（View Transitions 圆形扩散） ---------- */
+  const themeBtn = $('#themeBtn');
+  function applyTheme(next) {
+    document.documentElement.setAttribute('data-theme', next);
+    document.querySelector('meta[name="theme-color"]')
+      .setAttribute('content', next === 'light' ? '#f3f1e8' : '#0a0e0b');
+    try { localStorage.setItem('scicom-theme', next); } catch (err) { /* 隐私模式下忽略 */ }
+  }
+  themeBtn.addEventListener('click', (e) => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    const r = themeBtn.getBoundingClientRect();
+    document.documentElement.style.setProperty('--x', `${r.left + r.width / 2}px`);
+    document.documentElement.style.setProperty('--y', `${r.top + r.height / 2}px`);
+    // 支持 View Transitions 的浏览器做圆形扩散，否则直接切换
+    if (document.startViewTransition) {
+      document.startViewTransition(() => applyTheme(next));
+    } else {
+      applyTheme(next);
+    }
+  });
+  // 记住上次选择；也支持用 ?theme=light / ?theme=dark 直接分享指定配色
+  const urlTheme = new URLSearchParams(location.search).get('theme');
+  if (urlTheme === 'light' || urlTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', urlTheme);
+    document.querySelector('meta[name="theme-color"]')
+      .setAttribute('content', urlTheme === 'light' ? '#f3f1e8' : '#0a0e0b');
+  } else {
+    try {
+      const saved = localStorage.getItem('scicom-theme');
+      if (saved) applyTheme(saved);
+    } catch (err) { /* ignore */ }
+  }
+
+  /* ---------- 滚动进度 + 光标 ---------- */
+  const progress = $('#progress');
+  const cursor = $('#cursor');
+  let cx = 0, cy = 0, tx = 0, ty = 0;
+
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    window.addEventListener('mousemove', (e) => {
+      tx = e.clientX; ty = e.clientY;
+      cursor.style.opacity = '1';
+    });
+    // 用 rAF 做缓动，避免直接跟随产生的生硬感
+    (function loop() {
+      cx += (tx - cx) * .18; cy += (ty - cy) * .18;
+      cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+      requestAnimationFrame(loop);
+    })();
+    document.addEventListener('mouseover', (e) => {
+      cursor.classList.toggle('is-hover', !!e.target.closest('a, button, .card, .f-card, .book, .chip'));
+    });
+  }
+
+
+  /* ---------- 右下角：微信二维码 + 回到页首 ---------- */
+  (function () {
+    var wxBtn = document.getElementById('wxBtn');
+    var pop = document.getElementById('wxPop');
+    var topBtn = document.getElementById('topBtn');
+    if (wxBtn && pop) {
+      wxBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var on = pop.classList.toggle('on');
+        wxBtn.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+      document.addEventListener('click', function (e) {
+        if (!pop.classList.contains('on') || pop.contains(e.target)) return;
+        pop.classList.remove('on');
+        wxBtn.setAttribute('aria-expanded', 'false');
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape' || !pop.classList.contains('on')) return;
+        pop.classList.remove('on');
+        wxBtn.setAttribute('aria-expanded', 'false');
+      });
+    }
+    if (topBtn) {
+      var sync = function () { topBtn.classList.toggle('on', window.scrollY > 480); };
+      window.addEventListener('scroll', sync, { passive: true });
+      sync();
+      topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+  })();
+
+  /* ---------- 启动 ---------- */
+  buildChips();
+  buildGrid();
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

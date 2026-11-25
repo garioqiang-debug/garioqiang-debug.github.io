@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>葛应强 · 科普写作 × 自然摄影 × 课程设计</title>
+<meta name="description" content="葛应强（小强老师）个人门户：34 篇已刊科普作品、100 万+ 首发阅读，22 门自然课程档案，全国昆虫摄影比赛二等奖。昆虫学硕士，中国科普作家协会会员。">
+<meta name="author" content="葛应强">
+<meta name="theme-color" content="#0a0e0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233d6b41'/%3E%3Ccircle cx='16' cy='11' r='3.4' fill='%23c8ee6f'/%3E%3Cpath d='M16 14.5v7M16 17l-5 4M16 17l5 4M16 15.5l-5-4M16 15.5l5-4' stroke='%23c8ee6f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://scicom.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="葛应强 · 个人门户">
+<meta property="og:title" content="葛应强 · 科普写作 × 自然摄影 × 课程设计">
+<meta property="og:description" content="写虫子、拍虫子、把虫子变成一门课。三个站点，一个人。">
+<meta property="og:url" content="https://scicom.pages.dev/">
+<meta property="og:image" content="https://scicom.pages.dev/摄影/assets/img/p-mantis.jpg">
+
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap">
+
+<style>
+/* =============================================================
+   0. 设计变量 —— 与三个分站同一套语言
+   ============================================================= */
+:root{
+  --bg:#0a0e0b;
+  --bg-soft:#0f1511;
+  --panel:#121914;
+  --panel-2:#161e18;
+  --line:rgba(233,232,221,.10);
+  --line-2:rgba(233,232,221,.06);
+  --txt:#e9e8dd;
+  --muted:#94a094;
+  --dim:#6b776c;
+  --accent:#c8ee6f;
+  --accent-soft:rgba(200,238,111,.14);
+  --amber:#e6a05a;
+  --radius:22px;
+  --radius-lg:30px;
+  --shadow:0 30px 60px -30px rgba(0,0,0,.75);
+  --serif:"Noto Serif SC","Songti SC","SimSun",Georgia,serif;
+  --sans:"Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,monospace;
+}
+[data-theme="light"]{
+  --bg:#f3f1e8;
+  --bg-soft:#eae7db;
+  --panel:#ffffff;
+  --panel-2:#fbfaf4;
+  --line:rgba(18,26,20,.12);
+  --line-2:rgba(18,26,20,.07);
+  --txt:#121a14;
+  --muted:#55605a;
+  --dim:#74807a;
+  --accent:#3d6b41;
+  --accent-soft:rgba(61,107,65,.12);
+  --amber:#b26a2c;
+  --shadow:0 24px 50px -30px rgba(18,26,20,.35);
+}
+
+[data-theme="light"] .btn-primary{ background:#1c3b25; color:#f4f3ea; border-color:#1c3b25; }
+[data-theme="light"] .btn-primary:hover{ background:#142b1b; }
+[data-theme="light"] .tile-cap{ color:#f6f5ee; }
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+section{ scroll-margin-top:86px; }
+body{
+  margin:0; background:var(--bg); color:var(--txt);
+  font-family:var(--sans); font-size:16px; line-height:1.7;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  transition:background .45s ease, color .45s ease;
+}
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+::selection{ background:var(--accent); color:var(--bg); }
+
+.wrap{ max-width:1240px; margin:0 auto; padding:0 clamp(18px,4vw,56px); }
+.grain{
+  position:fixed; inset:0; z-index:90; pointer-events:none; opacity:.04; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.aurora{
+  position:fixed; inset:-16% -8% auto -8%; height:62vh; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(44% 60% at 16% 18%, rgba(200,238,111,.10), transparent 70%),
+    radial-gradient(38% 52% at 86% 6%, rgba(230,160,90,.08), transparent 70%);
+}
+
+/* =============================================================
+   1. 顶栏
+   ============================================================= */
+.topbar{
+  position:sticky; top:0; z-index:60;
+  backdrop-filter:blur(14px) saturate(1.2);
+  background:color-mix(in srgb, var(--bg) 78%, transparent);
+  border-bottom:1px solid var(--line-2);
+}
+.topbar-in{
+  max-width:1240px; margin:0 auto; padding:14px clamp(18px,4vw,56px);
+  display:flex; align-items:center; gap:26px;
+}
+.brand{ display:flex; align-items:center; gap:11px; }
+.brand-dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); }
+.brand b{ font-family:var(--serif); font-size:18px; font-weight:600; letter-spacing:.02em; }
+.brand span{ font-family:var(--mono); font-size:10px; letter-spacing:.24em; color:var(--dim); text-transform:uppercase; }
+.nav{ margin-left:auto; display:flex; gap:26px; font-size:13px; color:var(--muted); }
+.nav a{ position:relative; padding:6px 0; transition:color .3s; }
+.nav a:hover{ color:var(--txt); }
+.nav a::after{ content:""; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--accent); transition:right .35s cubic-bezier(.2,.7,.3,1); }
+.nav a:hover::after{ right:0; }
+.theme-btn{
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+  display:grid; place-items:center; color:var(--muted); flex:none;
+  transition:border-color .3s, color .3s, transform .3s;
+}
+.theme-btn:hover{ color:var(--txt); border-color:var(--accent); transform:rotate(-20deg); }
+.theme-btn svg{ width:17px; height:17px; }
+
+/* =============================================================
+   2. 首屏：左文字 + 右侧三站拼贴
+   ============================================================= */
+.hero{ padding-top:clamp(40px,6vw,84px); padding-bottom:clamp(30px,4vw,56px); }
+.hero-grid{ display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(28px,4vw,64px); align-items:center; }
+.eyebrow{
+  display:flex; align-items:center; gap:12px; margin:0;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--dim);
+}
+.eyebrow::before{ content:""; width:26px; height:1px; background:var(--accent); }
+.hero h1{
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(31px,4.3vw,54px); line-height:1.18;
+  letter-spacing:.01em; margin:18px 0 0;
+}
+.hero h1 em{ font-style:normal; color:var(--accent); }
+.hero-lede{ color:var(--muted); font-size:14.5px; line-height:1.95; max-width:31em; margin:20px 0 0; }
+.cred-row{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; }
+.cred{
+  font-family:var(--mono); font-size:10px; letter-spacing:.1em;
+  padding:7px 12px; border-radius:999px; border:1px solid var(--line); color:var(--muted);
+}
+.cred b{ color:var(--txt); font-weight:600; letter-spacing:0; }
+.hero-btns{ display:flex; flex-wrap:wrap; gap:10px; margin:26px 0 0; }
+.btn{
+  display:inline-flex; align-items:center; gap:10px; white-space:nowrap; flex:none;
+  padding:13px 22px; border-radius:999px; font-size:13.5px; letter-spacing:.02em;
+  border:1px solid var(--line);
+  transition:transform .3s cubic-bezier(.2,.7,.3,1), background .3s, border-color .3s, gap .3s;
+}
+.btn svg{ width:15px; height:15px; }
+.btn-primary{ background:var(--accent); color:#0a0e0b; border-color:var(--accent); font-weight:600; }
+.btn-primary:hover{ gap:16px; transform:translateY(-2px); }
+.btn-ghost:hover{ background:var(--panel); border-color:var(--line); gap:16px; }
+
+/* 拼贴：左一张竖图（摄影），右两张方图（写作 / 课程） */
+.collage{
+  display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1.16fr 1fr;
+  gap:10px; height:clamp(360px,35vw,480px);
+}
+.tile{
+  position:relative; overflow:hidden; border-radius:var(--radius);
+  border:1px solid var(--line); background:var(--bg-soft); display:block;
+}
+.tile:first-child{ grid-column:span 2; border-radius:var(--radius-lg); }
+.tile:first-child img{ object-position:center 58%; }
+.tile img{ width:100%; height:100%; object-fit:cover; filter:saturate(.94); transition:transform .8s cubic-bezier(.2,.7,.3,1), filter .5s; }
+.tile:hover img{ transform:scale(1.045); filter:saturate(1.05); }
+.tile::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(to top, rgba(4,6,5,.9), rgba(4,6,5,.35) 46%, rgba(4,6,5,.04) 78%, transparent);
+}
+.tile-cap{
+  position:absolute; left:14px; right:14px; bottom:12px; z-index:2;
+  display:flex; flex-direction:column; gap:2px; text-shadow:0 1px 8px rgba(0,0,0,.55); color:#eef1e6;
+}
+.tile-cap b{ font-family:var(--serif); font-size:15px; font-weight:600; }
+.tile-cap i{ font-style:normal; font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; color:rgba(233,232,221,.62); text-transform:uppercase; }
+.tile-no{
+  position:absolute; left:12px; top:12px; z-index:2;
+  font-family:var(--mono); font-size:9px; letter-spacing:.18em; color:#e8b179;
+  background:rgba(8,12,9,.62); border:1px solid rgba(230,160,90,.36);
+  padding:4px 9px; border-radius:999px;
+}
+
+/* =============================================================
+   3. 通用：区块头
+   ============================================================= */
+.sec{ padding:clamp(46px,6vw,86px) 0 0; }
+.sec-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.sec-head h2{ font-family:var(--serif); font-weight:600; font-size:clamp(24px,3.2vw,38px); line-height:1.25; margin:10px 0 0; }
+.sec-head p{ color:var(--muted); font-size:13px; max-width:36em; margin:8px 0 0; }
+.sec-note{ font-family:var(--mono); font-size:10px; letter-spacing:.16em; color:var(--dim); white-space:nowrap; padding-bottom:4px; text-transform:uppercase; }
+
+/* =============================================================
+   4. 三个站点
+   ============================================================= */
+.hubs{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1.6vw,18px); margin-top:clamp(24px,3vw,38px); }
+.hub{
+  display:flex; flex-direction:column; background:var(--panel); border:1px solid var(--line);
+  border-radius:var(--radius-lg); overflow:hidden;
+  transition:border-color .35s, transform .35s, box-shadow .35s;
+}
+.hub:hover{ border-color:rgba(200,238,111,.3); transform:translateY(-4px); box-shadow:var(--shadow); }
+.hub-fig{ aspect-ratio:16/10; overflow:hidden; position:relative; }
+.hub-fig img{ width:100%; height:100%; object-fit:cover; filter:saturate(.95); }
+.hub-fig::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(10,14,11,.55), transparent 60%); }
+.hub-badge{
+  position:absolute; left:12px; top:12px; z-index:2;
+  font-family:var(--mono); font-size:9px; letter-spacing:.14em;
+  padding:5px 10px; border-radius:999px;
+  background:rgba(200,238,111,.92); color:#0a0e0b;
+}
+.hub-badge.amber{ background:rgba(230,160,90,.92); color:#1a1206; }
+.hub-body{ padding:20px 22px 22px; display:flex; flex-direction:column; flex:1; }
+.hub-body .en{ font-family:var(--mono); font-size:9.5px; letter-spacing:.2em; color:var(--dim); }
+.hub-title{ display:block; }
+.hub-title h3{ transition:color .3s; }
+.hub-title:hover h3{ color:var(--accent); }
+.hub-body h3{ font-family:var(--serif); font-size:clamp(18px,2vw,22px); font-weight:600; margin:8px 0 10px; }
+.hub-body p{ color:var(--muted); font-size:12.8px; line-height:1.9; margin:0; flex:1; }
+.hub-nums{ display:flex; gap:16px; margin:16px 0 0; padding-top:14px; border-top:1px dashed var(--line); }
+.hub-nums span{ font-family:var(--mono); font-size:9.5px; letter-spacing:.08em; color:var(--dim); }
+.hub-nums b{ display:block; font-family:var(--serif); font-size:17px; font-weight:600; color:var(--txt); letter-spacing:0; }
+.hub-links{ margin-top:14px; display:flex; flex-direction:column; gap:6px; }
+.hub-links a{
+  display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+  font-size:12.5px; color:var(--muted); padding:3px 0; transition:color .3s, gap .3s;
+}
+.hub-links a:hover{ color:var(--accent); }
+.hub-links a small{ font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--dim); }
+
+/* =============================================================
+   5. 我能做什么 + 求职条
+   ============================================================= */
+.svc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(12px,1.6vw,18px); margin-top:clamp(24px,3vw,38px); }
+.svc{
+  position:relative; background:var(--panel); border:1px solid var(--line);
+  border-radius:var(--radius); padding:clamp(20px,2.4vw,28px);
+  transition:border-color .35s, transform .35s;
+}
+.svc:hover{ border-color:rgba(200,238,111,.3); transform:translateY(-3px); }
+.svc .no{ font-family:var(--mono); font-size:9.5px; letter-spacing:.18em; color:var(--amber); }
+.svc h3{ font-family:var(--serif); font-size:19px; font-weight:600; margin:10px 0 0; }
+.svc p{ color:var(--muted); font-size:12.8px; line-height:1.9; margin:9px 0 0; max-width:34em; }
+.svc-meta{ display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+.svc-meta span{ font-family:var(--mono); font-size:9px; letter-spacing:.1em; color:var(--dim); border:1px solid var(--line); padding:5px 9px; border-radius:999px; }
+
+.job{
+  margin-top:clamp(12px,1.6vw,18px); display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px;
+  padding:18px clamp(18px,2.4vw,26px); border-radius:var(--radius);
+  border:1px solid rgba(200,238,111,.28); background:rgba(200,238,111,.06);
+}
+.job .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); flex:none; }
+.job b{ font-family:var(--serif); font-size:15px; font-weight:600; }
+.job p{ color:var(--muted); font-size:12.5px; margin:0; }
+.job a{ margin-left:auto; font-size:12.5px; color:var(--accent); display:inline-flex; align-items:center; gap:6px; }
+
+/* =============================================================
+   6. 代表作品（跨站混排）
+   ============================================================= */
+.work-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1.6vw,18px); margin-top:clamp(24px,3vw,38px); }
+.work{
+  display:flex; flex-direction:column; background:var(--panel); border:1px solid var(--line);
+  border-radius:var(--radius); overflow:hidden;
+  transition:border-color .35s, transform .35s;
+}
+.work:hover{ border-color:rgba(200,238,111,.3); transform:translateY(-4px); }
+.work-fig{ aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--bg-soft); }
+.work-fig img{ width:100%; height:100%; object-fit:cover; filter:saturate(.94); transition:transform .8s cubic-bezier(.2,.7,.3,1); }
+.work:hover .work-fig img{ transform:scale(1.05); }
+.work-kind{
+  position:absolute; left:10px; top:10px; z-index:2;
+  font-family:var(--mono); font-size:9px; letter-spacing:.14em;
+  padding:4px 9px; border-radius:999px;
+  background:rgba(10,14,11,.62); color:#e7ecdf; border:1px solid rgba(233,232,221,.2);
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+}
+.work-body{ padding:16px 18px 18px; display:flex; flex-direction:column; flex:1; }
+.work-body h3{ font-family:var(--serif); font-size:15px; font-weight:600; line-height:1.5; margin:0; }
+.work-body p{ color:var(--muted); font-size:12px; line-height:1.85; margin:8px 0 0; flex:1; }
+.work-foot{
+  display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+  margin-top:14px; padding-top:12px; border-top:1px solid var(--line-2);
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.08em; color:var(--dim);
+}
+.work-foot em{ font-style:normal; color:var(--accent); }
+
+/* =============================================================
+   7. 关于：时间线
+   ============================================================= */
+.about{ display:grid; grid-template-columns:.82fr 1.18fr; gap:clamp(24px,4vw,64px); margin-top:clamp(24px,3vw,38px); align-items:start; }
+.about-lead{ font-family:var(--serif); font-size:clamp(19px,2.3vw,26px); line-height:1.6; font-weight:600; margin:0; }
+.about-lead em{ font-style:normal; color:var(--accent); }
+.about-note{ color:var(--muted); font-size:12.5px; line-height:1.95; margin:16px 0 0; max-width:26em; }
+.caps{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; }
+.caps span{ font-family:var(--mono); font-size:10px; letter-spacing:.08em; color:var(--muted); border:1px solid var(--line); padding:6px 11px; border-radius:999px; }
+
+.timeline{ list-style:none; margin:0; padding:0 0 0 20px; border-left:1px solid var(--line); }
+.timeline li{ position:relative; padding:0 0 22px; }
+.timeline li:last-child{ padding-bottom:0; }
+.timeline li::before{
+  content:""; position:absolute; left:-25px; top:6px; width:7px; height:7px; border-radius:50%;
+  background:var(--accent); box-shadow:0 0 0 3px var(--accent-soft);
+}
+.timeline time{ font-family:var(--mono); font-size:10px; letter-spacing:.14em; color:var(--amber); }
+.timeline b{ display:block; font-family:var(--serif); font-size:15.5px; font-weight:600; margin-top:4px; }
+.timeline p{ color:var(--muted); font-size:12.5px; line-height:1.9; margin:5px 0 0; max-width:38em; }
+
+/* =============================================================
+   8. 联系
+   ============================================================= */
+.contact{
+  margin-top:clamp(40px,5vw,70px);
+  display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(20px,3vw,44px); align-items:center;
+  padding:clamp(26px,4vw,50px); border-radius:var(--radius-lg);
+  border:1px solid var(--line); overflow:hidden;
+  background:
+    radial-gradient(70% 100% at 8% 0%, rgba(200,238,111,.11), transparent 62%),
+    var(--panel);
+}
+.contact h2{ font-family:var(--serif); font-size:clamp(23px,3vw,36px); font-weight:600; line-height:1.3; margin:10px 0 0; }
+.contact h2 em{ font-style:normal; color:var(--accent); }
+.contact p{ color:var(--muted); font-size:13px; line-height:1.95; margin:14px 0 0; max-width:30em; }
+.contact-ways{ display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:18px; font-size:12.5px; color:var(--muted); }
+.contact-ways b{ color:var(--txt); font-weight:500; }
+.qr{ justify-self:end; text-align:center; }
+.qr-box{ background:#fff; padding:10px; border-radius:16px; border:1px solid var(--line); }
+.qr img{ width:150px; height:150px; border-radius:9px; }
+.qr p{ font-family:var(--mono); font-size:9.5px; letter-spacing:.12em; color:var(--dim); margin:10px 0 0; }
+
+/* =============================================================
+   9. 页脚
+   ============================================================= */
+footer{ margin-top:clamp(46px,6vw,80px); border-top:1px solid var(--line-2); padding:clamp(26px,3.6vw,40px) 0 clamp(30px,4vw,44px); }
+.foot-in{ display:flex; flex-wrap:wrap; gap:20px 34px; align-items:flex-start; justify-content:space-between; }
+.foot-brand b{ font-family:var(--serif); font-size:16px; font-weight:600; display:flex; align-items:center; gap:9px; }
+.foot-brand p{ font-size:11.5px; color:var(--dim); margin:8px 0 0; }
+.foot-links{ display:flex; flex-wrap:wrap; gap:8px 22px; font-size:12px; color:var(--muted); }
+.foot-links a:hover{ color:var(--txt); }
+.foot-base{
+  display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between;
+  margin-top:22px; font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; color:var(--dim); text-transform:uppercase;
+}
+
+/* =============================================================
+   10. 右下角悬浮按钮（微信 / 回顶）
+   ============================================================= */
+.fab{ position:fixed; right:clamp(14px,2vw,26px); bottom:clamp(14px,2vw,26px); z-index:78; display:flex; flex-direction:column; gap:10px; }
+.fab-btn{
+  width:46px; height:46px; border-radius:50%;
+  border:1px solid var(--line); background:color-mix(in srgb, var(--panel) 88%, transparent);
+  backdrop-filter:blur(10px); color:var(--muted); display:grid; place-items:center;
+  transition:color .3s, border-color .3s, transform .3s, background .3s;
+}
+.fab-btn:hover{ color:var(--accent); border-color:rgba(200,238,111,.45); transform:translateY(-2px); }
+.fab-btn svg{ width:19px; height:19px; }
+#topBtn{ opacity:0; pointer-events:none; transition:opacity .35s, transform .35s; }
+#topBtn.on{ opacity:1; pointer-events:auto; }
+.wxpop{
+  position:fixed; right:clamp(14px,2vw,26px); bottom:140px; z-index:85;
+  padding:14px; border-radius:18px; border:1px solid var(--line);
+  background:color-mix(in srgb, var(--panel) 96%, transparent);
+  box-shadow:var(--shadow); opacity:0; transform:translateY(10px); pointer-events:none;
+  transition:opacity .3s, transform .3s;
+}
+.wxpop.on{ opacity:1; transform:none; pointer-events:auto; }
+.wxpop img{ width:150px; height:150px; border-radius:10px; background:#fff; padding:8px; }
+.wxpop p{ margin:9px 0 0; font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; color:var(--dim); text-align:center; }
+
+/* =============================================================
+   11. 响应式
+   ============================================================= */
+@media (max-width:1080px){
+  .hubs{ grid-template-columns:1fr 1fr; }
+  .work-grid{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:980px){
+  .hero-grid{ grid-template-columns:1fr; gap:28px; }
+  .collage{ height:clamp(300px,52vw,420px); order:-1; }
+  .about{ grid-template-columns:1fr; gap:26px; }
+  .contact{ grid-template-columns:1fr; }
+  .qr{ justify-self:start; }
+  .nav{ gap:18px; font-size:12.5px; }
+}
+@media (max-width:700px){
+  .hubs{ grid-template-columns:1fr; }
+  .svc-grid{ grid-template-columns:1fr; }
+  .work-grid{ grid-template-columns:1fr; }
+  .collage{ grid-template-columns:1fr 1fr; grid-template-rows:1.2fr 1fr; }
+  .tile:first-child{ grid-row:span 1; grid-column:span 2; }
+  .nav{ display:none; }
+}
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; animation:none!important; } }
+  /* ---------- 05 最新动态 ---------- */
+  .upd{
+    border:1px solid var(--line); border-radius:var(--radius-lg);
+    background:var(--panel); overflow:hidden;
+  }
+  .upd-row{
+    display:grid; grid-template-columns:106px minmax(0,1fr) auto;
+    gap:clamp(12px,2vw,26px); align-items:baseline;
+    padding:clamp(16px,1.9vw,22px) clamp(16px,2.3vw,30px);
+    text-decoration:none; color:inherit;
+    transition:background .3s;
+  }
+  .upd-row:hover{ background:var(--panel-2); }
+  .upd-row + .upd-row{ border-top:1px dashed var(--line); }
+  .upd-date{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+  .upd-main{ min-width:0; font-size:14px; line-height:1.9; }
+  .upd-main b{ font-family:var(--serif); font-size:clamp(14.5px,1.15vw,16.5px); font-weight:600; }
+  .upd-main b i{ font-style:normal; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--accent); margin-right:9px; }
+  .upd-note{ color:var(--muted); font-size:13.5px; }
+  .upd-link{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.06em;
+    color:var(--txt); white-space:nowrap;
+    border-bottom:1px solid var(--line); padding-bottom:2px;
+    transition:color .3s, border-color .3s;
+  }
+  .upd-row:hover .upd-link{ color:var(--accent); border-color:var(--accent); }
+  @media (max-width:720px){
+    .upd-row{ grid-template-columns:1fr; gap:4px; }
+    .upd-date{ font-size:10.5px; }
+    .upd-main{ font-size:13.5px; }
+    .upd-link{ justify-self:start; margin-top:6px; }
+  }
+
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"></div>
+
+<nav class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#top">
+      <span class="brand-dot"></span>
+      <b>葛应强</b>
+      <span>Portal</span>
+    </a>
+    <div class="nav">
+      <a href="#hubs">三个站点</a>
+      <a href="#services">能做什么</a>
+      <a href="#works">代表作品</a>
+      <a href="#about">关于</a>
+      <a href="#updates">动态</a>
+      <a href="#contact">联系</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="切换明暗主题">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8L5.6 18.4"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="wrap hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Science writer · Field photographer · Course designer</p>
+      <h1>写虫子，拍虫子，<br>再把虫子<em>变成一门课</em>。</h1>
+      <p class="hero-lede">
+        葛应强，昆虫学硕士、自然教育导师、科普作家。北京林业大学野生动植物保护与利用专业，研究生期间在中科院上海昆虫博物馆联合培养。
+        同一种野外观察，长出三种输出——文章、照片、课程。
+      </p>
+      <div class="cred-row">
+        <span class="cred">中国科普作家协会会员</span>
+        <span class="cred"><b>34</b> 篇已刊 · <b>100 万+</b> 首发阅读</span>
+        <span class="cred"><b>22</b> 门自然课程</span>
+        <span class="cred">全国昆虫摄影比赛<b> 二等奖</b></span>
+      </div>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#hubs">看三个站点
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#services">约稿与合作</a>
+      </div>
+    </div>
+
+    <div class="collage" aria-label="三个站点的视觉入口">
+      <a class="tile" href="摄影/index.html">
+        <img src="摄影/assets/img/p-mantis.jpg" alt="孔雀螳展开双翅威吓，前翅眼斑呈蓝绿金属光泽" width="1600" height="1067" fetchpriority="high" decoding="async">
+        <span class="tile-no">FIG.01</span>
+        <span class="tile-cap"><b>自然摄影</b><i>Photography · 11 幅入档</i></span>
+      </a>
+      <a class="tile" href="作品集/index.html">
+        <img src="作品集/assets/img/a32-deaths-head-hawkmoth.jpg" alt="鬼脸天蛾背部的人脸花纹" width="1200" height="900" loading="lazy" decoding="async">
+        <span class="tile-cap"><b>科普写作</b><i>Writing · 34 篇</i></span>
+      </a>
+      <a class="tile" href="课程/index.html">
+        <img src="课程/assets/img/c-honey.jpg" alt="蜂蜜品鉴工作坊：一排木勺上的不同蜂蜜" width="640" height="480" loading="lazy" decoding="async">
+        <span class="tile-cap"><b>课程设计</b><i>Courses · 22 门</i></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 01 三个站点 ===== -->
+<section class="sec" id="hubs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Three sites · 分站索引</p>
+        <h2>三个站点，一个人</h2>
+        <p>同一个物种库，三种讲法：写成文章、拍成照片、设计成一门能被别人上的课。</p>
+      </div>
+      <span class="sec-note">One naturalist · three outlets</span>
+    </div>
+
+    <div class="hubs">
+      <article class="hub">
+        <div class="hub-fig">
+          <img src="作品集/assets/img/a22-mayfly-swarm.jpg" alt="蜉蝣婚飞铺满路面" width="1200" height="750" loading="lazy" decoding="async">
+          <span class="hub-badge">主站</span>
+        </div>
+        <div class="hub-body">
+          <span class="en">Writing</span>
+          <a class="hub-title" href="作品集/index.html"><h3>科普写作</h3></a>
+          <p>从仓储昆虫到水生昆虫，34 篇已刊作品按日期倒序排开；每篇都走过一条事实台账式的流水线——数据落到原始文献，才敢发。</p>
+          <div class="hub-nums">
+            <span><b>34</b>篇已刊</span>
+            <span><b>100 万+</b>首发阅读</span>
+            <span><b>4</b>本图书</span>
+          </div>
+          <div class="hub-links">
+            <a href="作品集/index.html#featured">代表作品 <small>Selected</small></a>
+            <a href="作品集/index.html#works">全部作品 <small>Archive</small></a>
+            <a href="作品集/index.html#books">图书工作 <small>Books</small></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hub">
+        <div class="hub-fig">
+          <img src="摄影/assets/img/p-cicada.jpg" alt="蝉停在枝条上" width="1600" height="1000" loading="lazy" decoding="async">
+          <span class="hub-badge amber">精选 · 11 幅</span>
+        </div>
+        <div class="hub-body">
+          <span class="en">Photography</span>
+          <a class="hub-title" href="摄影/index.html"><h3>自然摄影</h3></a>
+          <p>2019 年第六届全国昆虫摄影比赛二等奖《六脚蜘蛛》、三等奖《短笛牧童》。先认虫，再按快门——物种认错的照片，再好看也是错的信息。</p>
+          <div class="hub-nums">
+            <span><b>02</b>项全国奖</span>
+            <span><b>11</b>幅入档</span>
+            <span><b>01</b>本图鉴</span>
+          </div>
+          <div class="hub-links">
+            <a href="摄影/index.html#awards">两张获奖原片 <small>Awards</small></a>
+            <a href="摄影/index.html#archive">精选照片 <small>Archive</small></a>
+            <a href="摄影/index.html#book">图鉴供图 <small>Book</small></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hub">
+        <div class="hub-fig">
+          <img src="课程/assets/img/c-microscope.jpg" alt="显微镜视野下的植物表皮切片" width="640" height="400" loading="lazy" decoding="async">
+        </div>
+        <div class="hub-body">
+          <span class="en">Course design</span>
+          <a class="hub-title" href="课程/index.html"><h3>课程设计</h3></a>
+          <p>2016—2026 十年课程档案，22 门按五个阶段排开：从幼儿园到高校教师培训，含六套方法论与自研教具。</p>
+          <div class="hub-nums">
+            <span><b>22</b>门课程</span>
+            <span><b>05</b>个阶段</span>
+            <span><b>15</b>件教具</span>
+          </div>
+          <div class="hub-links">
+            <a href="课程/index.html#catalog">课程目录 <small>Catalog</small></a>
+            <a href="课程/index.html#methods">六套方法论 <small>Methods</small></a>
+            <a href="课程/index.html#tools">自研教具 <small>Tools</small></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 能做什么 ===== -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">What I do · 可承接的四类工作</p>
+        <h2>稿件、课程、图片、审校</h2>
+        <p>四件事都围绕同一件事：让物种信息准确，同时让人愿意读下去。</p>
+      </div>
+      <span class="sec-note">Available 2026</span>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="no">01</span>
+        <h3>约稿与撰稿</h3>
+        <p>博物类的常规选题、热点辟谣、物种解读。单篇 3000–5000 字，先给选题与事实台账，再动笔；配图由本人拍摄或绘制，不用图库素材。</p>
+        <div class="svc-meta"><span>果壳</span><span>博物</span><span>科普中国</span><span>科学大院</span></div>
+      </div>
+      <div class="svc">
+        <span class="no">02</span>
+        <h3>课程与研学</h3>
+        <p>22 门现成课程可直接排期，也可按场地、年龄、时长重做。交付含教案、讲师手册、教具清单与现场风险预案。</p>
+        <div class="svc-meta"><span>幼儿园—高校</span><span>场馆 / 营地 / 校园</span><span>含教具</span></div>
+      </div>
+      <div class="svc">
+        <span class="no">03</span>
+        <h3>图鉴供图与图片授权</h3>
+        <p>《中国天蛾科图鉴》签约图片作者。生态照、标本照、科研图版均可供图，授权范围可按修订版、分册、科普读物分别约定。</p>
+        <div class="svc-meta"><span>生态微距</span><span>科研图版</span><span>可商用授权</span></div>
+      </div>
+      <div class="svc">
+        <span class="no">04</span>
+        <h3>科学审校</h3>
+        <p>图书、课件、展陈文本的术语与学名核对：拉丁名拼写、分类地位、数据出处逐条对账，只改错的，不动作者的笔调。</p>
+        <div class="svc-meta"><span>术语把关</span><span>学名核对</span><span>图书 / 课件</span></div>
+      </div>
+    </div>
+
+    <div class="job">
+      <span class="dot" aria-hidden="true"></span>
+      <b>目前也在看机会</b>
+      <p>广州 · 自然教育 / 科普内容 / 科普 IP 方向，全职或长期合作均可。</p>
+      <a href="#contact">聊聊 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 代表作品 ===== -->
+<section class="sec" id="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Selected · 跨站六件</p>
+        <h2>六件能说明方法的作品</h2>
+        <p>两篇文章、两张照片、两门课——每一件都能看出同一个习惯：先把事实核实清楚，再考虑怎么讲得好听。</p>
+      </div>
+      <span class="sec-note">3 × 2</span>
+    </div>
+
+    <div class="work-grid">
+      <a class="work" href="作品集/index.html#works">
+        <div class="work-fig">
+          <img src="作品集/assets/img/a34-backswimmer.jpg" alt="仰泳蝽在水下倒着游" width="1200" height="900" loading="lazy" decoding="async">
+          <span class="work-kind">文章 · 博物</span>
+        </div>
+        <div class="work-body">
+          <h3>多亏同事这句话，我找到了一起躺平的划水搭子！</h3>
+          <p>用腹部气膜呼吸、倒着游也活得很好——把一个反着来的水生昆虫，讲成一套关于呼吸的工程学。</p>
+          <div class="work-foot"><span>2026.11.16</span><em>1.1W 阅读</em></div>
+        </div>
+      </a>
+
+      <a class="work" href="作品集/index.html#works">
+        <div class="work-fig">
+          <img src="作品集/assets/img/a33-bean-doll.jpg" alt="云南集市上成串的豆荚手作" width="1200" height="900" loading="lazy" decoding="async">
+          <span class="work-kind">文章 · 果壳</span>
+        </div>
+        <div class="work-body">
+          <h3>半夜总有啃咬声，是谁在吃我的云南豆荚娃娃？</h3>
+          <p>从一只被啃坏的豆荚手作，顺着木屑和啃咬声找到仓储昆虫的痕迹——选题就来自自己家的角落。</p>
+          <div class="work-foot"><span>2026.11.06</span><em>8.5W 阅读</em></div>
+        </div>
+      </a>
+
+      <a class="work" href="摄影/index.html#awards">
+        <div class="work-fig">
+          <img src="摄影/assets/img/p-piper.jpg" alt="绒蜂虻停在草叶上，浑身覆毛" width="1600" height="1200" loading="lazy" decoding="async">
+          <span class="work-kind">照片 · 获奖</span>
+        </div>
+        <div class="work-body">
+          <h3>短笛牧童</h3>
+          <p>浑身长毛的绒蜂虻停在草叶上，口器前伸——像一支立在叶间的小绵羊，也像吹笛的牧童。</p>
+          <div class="work-foot"><span>全国昆虫摄影比赛</span><em>三等奖 · 2019</em></div>
+        </div>
+      </a>
+
+      <a class="work" href="摄影/index.html#awards">
+        <div class="work-fig">
+          <img src="摄影/assets/img/p-spidersix.jpg" alt="蛛蝇停在鸟羽之间" width="1400" height="1400" loading="lazy" decoding="async">
+          <span class="work-kind">照片 · 获奖</span>
+        </div>
+        <div class="work-body">
+          <h3>六脚蜘蛛</h3>
+          <p>翅退化、足细长，看着像蜘蛛，其实是一只蝇。拟态造成的第一次误判，就是这张照片想说的事。</p>
+          <div class="work-foot"><span>全国昆虫摄影比赛</span><em>二等奖 · 2019</em></div>
+        </div>
+      </a>
+
+      <a class="work" href="课程/index.html#catalog">
+        <div class="work-fig">
+          <img src="课程/assets/img/c-nightwetland.jpg" alt="湿地夜观课现场" width="640" height="480" loading="lazy" decoding="async">
+          <span class="work-kind">课程 · 营地</span>
+        </div>
+        <div class="work-body">
+          <h3>湿地夜观课</h3>
+          <p>灯诱、听声、看水——把夜间生境拆成可执行的观察任务，孩子带得走的不是知识点，是一套看的方法。</p>
+          <div class="work-foot"><span>夜观 · 营地</span><em>含教具清单</em></div>
+        </div>
+      </a>
+
+      <a class="work" href="课程/index.html#catalog">
+        <div class="work-fig">
+          <img src="课程/assets/img/c-hive.jpg" alt="蜂巢上的蜂群" width="640" height="480" loading="lazy" decoding="async">
+          <span class="work-kind">课程 · 场馆</span>
+        </div>
+        <div class="work-body">
+          <h3>蜂巢结构实验课</h3>
+          <p>不讲课先搭模型：让孩子自己发现六边形为什么省材料。结论由他们推出来，讲师只负责把变量摆好。</p>
+          <div class="work-foot"><span>结构 · 场馆</span><em>可改造排期</em></div>
+        </div>
+      </a>
+    </div>
+</section>
+
+<!-- ===== 04 关于 ===== -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">About · 履历</p>
+        <h2>一条线：从标本到读者</h2>
+      </div>
+      <span class="sec-note">Field first, story second</span>
+    </div>
+
+    <div class="about">
+      <div>
+        <p class="about-lead">
+          先认虫，再写虫；<br>认错了，<em>写得再好也是错的信息</em>。
+        </p>
+        <p class="about-note">
+          林学硕士出身，研究方向是双翅目系统学；研究生期间在中科院上海昆虫博物馆联合培养，整天与标本、显微镜和电镜打交道。
+          后来发现，把这些名字讲给不认识它们的人听，比多鉴定一个种更有用。
+        </p>
+        <div class="caps">
+          <span>科普写作 · 34 篇</span>
+          <span>生态 / 科研摄影</span>
+          <span>课程设计与讲师培训</span>
+          <span>图书与课件审校</span>
+          <span>学名与文献核对</span>
+        </div>
+      </div>
+
+      <ol class="timeline">
+        <li>
+          <time>2016 — 2026</time>
+          <b>课程档案 22 门</b>
+          <p>从幼儿园亲子课到高校教师培训，五个阶段：起源、营地、场馆、进校园、志愿者与讲师培训。含六套方法论与自研教具。</p>
+        </li>
+        <li>
+          <time>2017</time>
+          <b>中国科协研究生科普能力提升项目</b>
+          <p>《蝇类秘史》四篇：捕食性、蚁栖性、寄生性蝇类各一篇。第一次意识到，讲清一个类群，比讲一个物种更有力量。</p>
+        </li>
+        <li>
+          <time>2019</time>
+          <b>第六届全国昆虫摄影比赛 二等奖 · 三等奖</b>
+          <p>《六脚蜘蛛》《短笛牧童》。评审口径是物种准确、行为可读、生境可信——恰好也是我拍照的顺序。</p>
+        </li>
+        <li>
+          <time>2020 — 2021</time>
+          <b>中科院年度十佳作品 两度获评</b>
+          <p>两篇博物稿入选，选题都不“讨喜”：一篇是铺满路面的蜉蝣，一篇是被误解的蝇类。</p>
+        </li>
+        <li>
+          <time>2021 — 2026</time>
+          <b>图书工作 4 本</b>
+          <p>四种角色：特辑收录、特邀编辑、全书执笔、全书审校。审校那本不署作者名，但每一页的科学准确性都落在我这里。</p>
+        </li>
+        <li>
+          <time>2026.11</time>
+          <b>已刊科普 34 篇 · 首发阅读 100 万+</b>
+          <p>果壳、博物、科普中国、科学大院、中国科普博览等平台；《中国天蛾科图鉴》签约图片作者。</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 最新动态 ===== -->
+<section class="sec" id="updates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Updates · 最新动态</p>
+        <h2>最近六条，三站各两条</h2>
+        <p>两篇新稿、两张新照片、两门新课程——只写已经发生的，不写计划。</p>
+      </div>
+      <span class="sec-note">Latest first</span>
+    </div>
+
+    <div class="upd">
+
+      <a class="upd-row" href="https://mp.weixin.qq.com/s/NdRUaDdHo4kF60bZMSfMJQ">
+        <span class="upd-date">2026.11.16</span>
+        <span class="upd-main">
+          <b><i>博物</i>多亏同事这句话，我找到了一起躺平的划水搭子！</b><br>
+          <span class="upd-note">仰泳蝽：背朝下划水，连呼吸都是倒着做的。首发 1.1 万阅读。</span>
+        </span>
+        <span class="upd-link">读原文 ↗</span>
+      </a>
+
+      <a class="upd-row" href="https://mp.weixin.qq.com/s/KJGZ-iNBr-SSTkyD3RHkjg">
+        <span class="upd-date">2026.11.06</span>
+        <span class="upd-main">
+          <b><i>果壳</i>半夜总有啃咬声，是谁在吃我的云南豆荚娃娃？</b><br>
+          <span class="upd-note">从一声啃咬追到仓储害虫，再追到云南集市上那串手作豆荚。首发 8.5 万阅读。</span>
+        </span>
+        <span class="upd-link">读原文 ↗</span>
+      </a>
+
+      <a class="upd-row" href="摄影/index.html#archive">
+        <span class="upd-date">2026.11</span>
+        <span class="upd-main">
+          <b><i>摄影</i>首屏换成「孔雀螳 · 展翅威吓」</b><br>
+          <span class="upd-note">西双版纳 2023 年拍的那一只，前翅眼斑在威吓时闪蓝绿金属光。</span>
+        </span>
+        <span class="upd-link">看照片 →</span>
+      </a>
+
+      <a class="upd-row" href="摄影/index.html#awards">
+        <span class="upd-date">2026.11</span>
+        <span class="upd-main">
+          <b><i>摄影</i>获奖区改成「两张可切换」</b><br>
+          <span class="upd-note">《六脚蜘蛛》与《短笛牧童》，同一次野外习惯的两种结果；点图就能换。</span>
+        </span>
+        <span class="upd-link">看获奖 →</span>
+      </a>
+
+      <a class="upd-row" href="课程/index.html#catalog">
+        <span class="upd-date">2026.09</span>
+        <span class="upd-main">
+          <b><i>课程</i>花城植记 · 一园一品——公园公民科学监测</b><br>
+          <span class="upd-note">把一座公园做成持续产出的监测点：观测手册 + 志愿者带固定样线，游客随手记也进物种档案。</span>
+        </span>
+        <span class="upd-link">看课程 →</span>
+      </a>
+
+      <a class="upd-row" href="课程/index.html#catalog">
+        <span class="upd-date">2026.09</span>
+        <span class="upd-main">
+          <b><i>课程</i>植物叶片侦探社</b><br>
+          <span class="upd-note">五个站点五条线索，把逛公园变成一次带孩子破案的定线导赏，不会掉队。</span>
+        </span>
+        <span class="upd-link">看课程 →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 联系 ===== -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <p class="eyebrow">Contact · 合作与邀约</p>
+        <h2>不确定走哪条路？<br><em>直接加微信说清楚。</em></h2>
+        <p>约稿看写作站，课程看课程站，图片授权看摄影站；如果只是想先聊聊选题，备注一句「科普合作」通过更快。</p>
+        <div class="contact-ways">
+          <span><b>约稿</b> 3000–5000 字博物稿</span>
+          <span><b>课程</b> 22 门现成 / 可改造</span>
+          <span><b>图片</b> 生态照 · 科研图版</span>
+          <span><b>审校</b> 图书 / 课件</span>
+        </div>
+      </div>
+      <div class="qr">
+        <div class="qr-box"><img src="作品集/assets/img/wx-qrcode.png" alt="微信二维码：gkeung" width="150" height="150" loading="lazy" decoding="async"></div>
+        <p>微信 gkeung · 备注来意</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <b><i class="brand-dot"></i>葛应强 · 个人门户</b>
+      <p>昆虫学硕士 · 自然教育导师 · 科普作家 · 中国科普作家协会会员</p>
+    </div>
+    <div class="foot-links">
+      <a href="作品集/index.html">科普写作 ↗</a>
+      <a href="摄影/index.html">自然摄影 ↗</a>
+      <a href="课程/index.html">课程设计 ↗</a>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>© 2026 葛应强</span>
+    <span>One naturalist · three outlets</span>
+  </div>
+</footer>
+
+<!-- 右下角：微信二维码 / 回到页首 -->
+<div class="fab">
+  <button class="fab-btn" id="wxBtn" type="button" aria-label="查看微信二维码" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 4.5h6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H13l-3.2 2.6v-2.6H9a2 2 0 0 1-1.6-.8"/><path d="M4.5 9.4h7.6a1.8 1.8 0 0 1 1.8 1.8v3.9a1.8 1.8 0 0 1-1.8 1.8H10l-2.9 2.3v-2.3H4.5A1.8 1.8 0 0 1 2.7 15v-3.9A1.8 1.8 0 0 1 4.5 9.4z" opacity=".55"/></svg>
+  </button>
+  <button class="fab-btn" id="topBtn" type="button" aria-label="回到页首">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+  </button>
+</div>
+<div class="wxpop" id="wxPop" role="dialog" aria-label="微信二维码">
+  <img src="作品集/assets/img/wx-qrcode.png" alt="微信二维码：gkeung" width="150" height="150">
+  <p>微信 gkeung</p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+
+  /* ---------- 主题（与三个分站共用同一个 key） ---------- */
+  var root = document.documentElement;
+  function applyTheme(next) {
+    root.setAttribute('data-theme', next);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', next === 'light' ? '#f3f1e8' : '#0a0e0b');
+    try { localStorage.setItem('scicom-theme', next); } catch (e) {}
+  }
+  $('#themeBtn').addEventListener('click', function () {
+    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+  try {
+    var saved = localStorage.getItem('scicom-theme');
+    if (saved === 'light' || saved === 'dark') applyTheme(saved);
+  } catch (e) {}
+
+  /* ---------- 回到页首 ---------- */
+  var top = $('#topBtn');
+  function onScroll() {
+    top.classList.toggle('on', window.scrollY > 480);
+    if (document.activeElement !== top) {}
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  top.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- 微信二维码弹层 ---------- */
+  var pop = $('#wxPop'), wx = $('#wxBtn');
+  function closePop() { pop.classList.remove('on'); wx.setAttribute('aria-expanded', 'false'); }
+  wx.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var on = !pop.classList.contains('on');
+    pop.classList.toggle('on', on);
+    wx.setAttribute('aria-expanded', on ? 'true' : 'false');
+  });
+  document.addEventListener('click', function (e) {
+    if (!pop.contains(e.target) && !wx.contains(e.target)) closePop();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+  if (window.matchMedia('(hover:hover)').matches) {
+    var qr = $('.qr-box');
+    if (qr) qr.addEventListener('click', function () { try { navigator.clipboard.writeText('gkeung'); } catch (e) {} });
+  }
+})();
+</script>
+</body>
+</html>
