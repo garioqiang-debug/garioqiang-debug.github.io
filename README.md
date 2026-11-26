@@ -269,3 +269,32 @@ git push
 
 1. `build.js`、`app.js`、`index.tpl.html`、`course-data.json` 位于站点目录内，会被 GitHub Pages 一并发布，线上可以直接访问。内容只是模板与数据，没有敏感信息，公开反而符合"代码要能讲清楚"的取向；若想藏起来，得把构建源移到仓库外，代价是失去单副本。
 2. 图片原图备份（`_bak\img-orig`）目前还在 D 盘。**不要放进 G 盘**——仓库内所有文件都会被发布，且会撑大仓库体积。建议把它挪到 `G:\个人网站-备份\` 这类仓库外目录，长期留存。
+---
+
+## 十八、阶段性冻结与 12 月待办清单（2026-11-26）
+
+四个站（门户 + 科普写作 + 自然摄影 + 研学课程）于 2026-11-26 阶段性冻结，线上版本为 commit `649cbdd`。工作区干净、与 `origin/main` 同步，没有未推送的改动。
+
+**下次开工只做三件事**：`cd` 到仓库、改文件、`git push`。课程站若动到模板或数据，先 `cd 课程; node build.js`。
+
+### 待办（12 月底统一处理，按优先级）
+
+| # | 优先级 | 位置 | 问题 | 做法 | 预估 |
+|---|---|---|---|---|---|
+| 1 | P0 | `课程\index.tpl.html` | 全站唯一缺 `og:image` / `og:url` / `canonical` 的页面，分享无缩略图 | 在 `<head>` 补三条，图用 `assets/img/c-microscope.jpg`，然后 `node build.js` | 10 分钟 |
+| 2 | P1 | `摄影\index.html` 首屏统计 | 写「02 幅 获奖原片」低估了档案：实际有 5 幅参赛与获奖原片 | 改成「05 幅 参赛与获奖原片（点开看大图）」，指向 `#archive`（精选区有灯箱） | 5 分钟 |
+| 3 | P1 | `摄影\assets\img\p-mantis.jpg` | 右下角 © 水印被圆角框裁掉一半（图注已补「摄影 © 葛应强」兜底） | 重新裁图，四周留 3% 黑边；或 `.hero-frame img{object-position:52% center}` | 10 分钟 |
+| 4 | P1 | `index.html`（门户）`.about` | About 左栏内容比右栏时间线短约 500px，出现大片空白 | 左栏加 `position:sticky; top:90px; align-self:start` | 5 分钟 |
+| 5 | P1 | `404.html` | 正文段落断行难看（“自己跑 / 掉，网页会”） | 收窄 `max-width` 到 28em 并调 line-height | 5 分钟 |
+| 6 | P1（可选） | `摄影\assets\img\p-spidersix.jpg`、`作品集\assets\img\a33-bean-doll.jpg` | 仍偏大（321 KB / 271 KB） | 缩到 1200 长边、q70，约 180 KB；代价是微距细节略软 | 10 分钟 |
+| 7 | P2 | `课程\course-data.json` 的 `c-kapok`、`c-schbfly` | 木棉课、蝴蝶课 `cover` 为空，用 CSS 教案封面牌；旧图含校名与小学生正脸不可用 | 从档案另找只拍植物/教具/手部的照片，或继续用封面牌 | 待素材 |
+| 8 | P2 | `index.html` 门户「最新动态」 | 六条手工维护，发新稿要手改三处 | 可选：写作两条改为从 `ARTICLES` 取最新两条自动渲染；摄影/课程仍手工 | 视需求 |
+| 9 | P2 | 站外 | `sitemap.xml` 已就位但未提交搜索引擎；全站无访问统计 | 提交 Google Search Console / Bing；接 Umami 或 Cloudflare Web Analytics（均免 cookie） | 需决策 |
+| 10 | P2 | 站外 | 域名 `garioqiang-debug.github.io` 偏长且含 “debug” | 绑自定义短域名，仓库根加 `CNAME`，原地址仍可用 | 需决策 |
+
+### 维护约定（别忘）
+
+- 单副本在 `G:\个人网站-重构版-现代`，D 盘 `_现代-20261125` 只作历史归档，不再编辑。
+- 图片原图备份留在仓库外，**不要**放进本站目录（会被 Pages 公开且撑大仓库）。
+- `课程\index.html` 是构建产物，永远改模板/数据后重建，不手改。
+- 每次改完更新本 README 对应章节，并把新决策写进「设计说明.md」。
